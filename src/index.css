@@ -8,57 +8,57 @@ All colors MUST be HSL for perfect gradient blending.
 
 @layer base {
   :root {
-    /* Base Colors - Warm and Welcoming */
-    --background: 350 20% 99%;
-    --foreground: 240 15% 15%;
+    /* Base Colors - Warm and Readable */
+    --background: 350 25% 98%;
+    --foreground: 240 25% 20%;
 
-    /* Card System - Soft and Glowing */
-    --card: 0 0% 100%;
-    --card-foreground: 240 15% 15%;
-    --card-glow: 0 0% 100%;
+    /* Card System - Soft and Subtle */
+    --card: 0 0% 99%;
+    --card-foreground: 240 20% 25%;
+    --card-glow: 0 0% 96%;
 
     /* Interactive Elements */
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 15% 15%;
+    --popover: 0 0% 99%;
+    --popover-foreground: 240 20% 25%;
 
-    /* Primary Palette - Magical Gradients */
-    --primary: 280 70% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 280 100% 85%;
+    /* Primary Palette - Toned Down */
+    --primary: 280 35% 45%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 280 50% 70%;
 
     /* Secondary Warm Tones */
-    --secondary: 340 60% 88%;
-    --secondary-foreground: 240 15% 15%;
+    --secondary: 340 20% 92%;
+    --secondary-foreground: 240 25% 30%;
 
-    /* Accent Colors - Creative Highlights */
-    --accent: 180 60% 80%;
-    --accent-foreground: 240 15% 15%;
-    --accent-glow: 180 100% 90%;
+    /* Accent Colors - Subtle Highlights */
+    --accent: 180 25% 85%;
+    --accent-foreground: 240 25% 30%;
+    --accent-glow: 180 35% 75%;
 
     /* Muted but Warm */
-    --muted: 350 25% 95%;
-    --muted-foreground: 240 10% 50%;
+    --muted: 350 15% 94%;
+    --muted-foreground: 240 15% 50%;
 
     /* Supporting Colors */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 340 30% 90%;
-    --input: 340 30% 95%;
-    --ring: 280 70% 60%;
+    --border: 340 20% 88%;
+    --input: 340 15% 93%;
+    --ring: 280 35% 45%;
 
     --radius: 1rem;
 
-    /* Custom Gradient Variables */
-    --gradient-primary: linear-gradient(135deg, hsl(280, 70%, 70%), hsl(320, 60%, 80%), hsl(180, 60%, 85%));
-    --gradient-secondary: linear-gradient(120deg, hsl(340, 60%, 92%), hsl(180, 50%, 90%));
-    --gradient-accent: linear-gradient(45deg, hsl(45, 90%, 85%), hsl(30, 80%, 80%));
-    --gradient-hero: linear-gradient(135deg, hsl(280, 50%, 95%) 0%, hsl(320, 40%, 93%) 25%, hsl(180, 30%, 95%) 50%, hsl(45, 60%, 95%) 100%);
+    /* Custom Gradient Variables - More Subtle */
+    --gradient-primary: linear-gradient(135deg, hsl(280, 35%, 55%), hsl(320, 30%, 65%), hsl(180, 25%, 75%));
+    --gradient-secondary: linear-gradient(120deg, hsl(340, 25%, 88%), hsl(180, 20%, 90%));
+    --gradient-accent: linear-gradient(45deg, hsl(45, 40%, 85%), hsl(30, 35%, 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(280, 20%, 96%) 0%, hsl(320, 15%, 94%) 25%, hsl(180, 15%, 96%) 50%, hsl(45, 25%, 96%) 100%);
 
-    /* Shadow System - Soft and Glowing */
-    --shadow-soft: 0 4px 20px -2px hsl(280, 30%, 80%);
-    --shadow-glow: 0 8px 40px -4px hsl(280, 60%, 75%);
-    --shadow-card: 0 10px 50px -5px hsl(280, 20%, 85%);
+    /* Shadow System - Softer */
+    --shadow-soft: 0 4px 20px -2px hsl(280, 15%, 75%);
+    --shadow-glow: 0 8px 40px -4px hsl(280, 25%, 80%);
+    --shadow-card: 0 10px 50px -5px hsl(280, 10%, 85%);
 
     /* Animation Variables */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -82,41 +82,48 @@ All colors MUST be HSL for perfect gradient blending.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 20% 8%;
+    --foreground: 210 15% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 18% 10%;
+    --card-foreground: 210 15% 90%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 15% 90%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 280 35% 65%;
+    --primary-foreground: 220 20% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217 15% 18%;
+    --secondary-foreground: 210 15% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 217 15% 18%;
+    --muted-foreground: 215 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 217 15% 18%;
+    --accent-foreground: 210 15% 90%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 210 15% 90%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 217 15% 18%;
+    --input: 217 15% 18%;
+    --ring: 280 35% 65%;
+    
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 210 15% 90%;
+    --sidebar-primary: 280 35% 65%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 217 15% 15%;
+    --sidebar-accent-foreground: 210 15% 90%;
+    --sidebar-border: 217 15% 15%;
+    --sidebar-ring: 280 35% 65%;
+
+    /* Update gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(280, 35%, 55%), hsl(320, 30%, 60%), hsl(180, 25%, 65%));
+    --gradient-secondary: linear-gradient(120deg, hsl(340, 20%, 15%), hsl(180, 15%, 18%));
+    --gradient-accent: linear-gradient(45deg, hsl(45, 25%, 20%), hsl(30, 20%, 18%));
+    --gradient-hero: linear-gradient(135deg, hsl(220, 20%, 8%) 0%, hsl(217, 18%, 10%) 25%, hsl(215, 15%, 12%) 50%, hsl(220, 18%, 9%) 100%);
   }
 }
 
@@ -131,13 +138,18 @@ All colors MUST be HSL for perfect gradient blending.
     min-height: 100vh;
   }
 
-  /* Beautiful Typography */
+  /* Beautiful Typography - Better Contrast */
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
+    color: hsl(var(--foreground));
+  }
+
+  .text-gradient {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: hsl(var(--foreground)); /* Fallback for better accessibility */
   }
 
   /* Smooth Scrolling */
