@@ -2,41 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Jasleen's Portfolio Design System - Warm, Creative, and Professional
+All colors MUST be HSL for perfect gradient blending.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base Colors - Warm and Welcoming */
+    --background: 350 20% 99%;
+    --foreground: 240 15% 15%;
 
+    /* Card System - Soft and Glowing */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 240 15% 15%;
+    --card-glow: 0 0% 100%;
 
+    /* Interactive Elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 240 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Palette - Magical Gradients */
+    --primary: 280 70% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 280 100% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary Warm Tones */
+    --secondary: 340 60% 88%;
+    --secondary-foreground: 240 15% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent Colors - Creative Highlights */
+    --accent: 180 60% 80%;
+    --accent-foreground: 240 15% 15%;
+    --accent-glow: 180 100% 90%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted but Warm */
+    --muted: 350 25% 95%;
+    --muted-foreground: 240 10% 50%;
 
+    /* Supporting Colors */
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 340 30% 90%;
+    --input: 340 30% 95%;
+    --ring: 280 70% 60%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Custom Gradient Variables */
+    --gradient-primary: linear-gradient(135deg, hsl(280, 70%, 70%), hsl(320, 60%, 80%), hsl(180, 60%, 85%));
+    --gradient-secondary: linear-gradient(120deg, hsl(340, 60%, 92%), hsl(180, 50%, 90%));
+    --gradient-accent: linear-gradient(45deg, hsl(45, 90%, 85%), hsl(30, 80%, 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(280, 50%, 95%) 0%, hsl(320, 40%, 93%) 25%, hsl(180, 30%, 95%) 50%, hsl(45, 60%, 95%) 100%);
+
+    /* Shadow System - Soft and Glowing */
+    --shadow-soft: 0 4px 20px -2px hsl(280, 30%, 80%);
+    --shadow-glow: 0 8px 40px -4px hsl(280, 60%, 75%);
+    --shadow-card: 0 10px 50px -5px hsl(280, 20%, 85%);
+
+    /* Animation Variables */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +127,184 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background: var(--gradient-hero);
+    min-height: 100vh;
   }
+
+  /* Beautiful Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Gradient Button Variants */
+  .btn-gradient {
+    background: var(--gradient-primary);
+    @apply text-white font-medium px-8 py-4 rounded-full;
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition-smooth);
+    border: none;
+  }
+
+  .btn-gradient:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--shadow-card);
+  }
+
+  .btn-secondary {
+    background: var(--gradient-secondary);
+    @apply text-foreground font-medium px-6 py-3 rounded-full;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-bounce);
+  }
+
+  .btn-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Glowing Cards */
+  .card-glow {
+    @apply bg-card/80 backdrop-blur-sm rounded-3xl p-8;
+    box-shadow: var(--shadow-card);
+    border: 1px solid hsl(var(--border));
+    transition: var(--transition-smooth);
+  }
+
+  .card-glow:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+    border-color: hsl(var(--primary) / 0.3);
+  }
+
+  /* Skill Badges */
+  .skill-badge {
+    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-medium;
+    background: var(--gradient-secondary);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-bounce);
+    border: 1px solid hsl(var(--accent) / 0.3);
+  }
+
+  .skill-badge:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-glow);
+    background: var(--gradient-primary);
+    color: white;
+  }
+
+  /* Floating Animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .float-animation:nth-child(2) {
+    animation-delay: -2s;
+  }
+
+  .float-animation:nth-child(3) {
+    animation-delay: -4s;
+  }
+
+  /* Sparkle Effect */
+  .sparkle {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sparkle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary-glow) / 0.4), transparent);
+    transition: var(--transition-smooth);
+  }
+
+  .sparkle:hover::before {
+    left: 100%;
+  }
+}
+
+@layer utilities {
+  /* Custom Gradients */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  /* Text Gradients */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glow Effects */
+  .glow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .glow-strong {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Animation Classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 3s ease-in-out infinite;
+  }
+}
+
+/* Custom Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+@keyframes bounceGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
