@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronDown, Github, Linkedin, Mail, Instagram, Sparkles, Heart, Star } from 'lucide-react';
-import mypicFinal from '@/assets/mypic-final.png';
+import mypic from '@/assets/mypic-final.png';
 
 // https://dashboard.emailjs.com/admin
 
@@ -51,7 +51,7 @@ export default function Hero() {
         <div className="relative mb-12 mt-12">
           <div className="relative mx-auto w-64 h-64 rounded-full overflow-hidden glow-strong ">
             <img
-              src={mypicFinal}
+              src={mypic}
               
               alt="Jasleen Minhas - ML Engineer & Creative Soul"
               className="w-full h-full object-cover"

@@ -1,20 +1,27 @@
 import { ExternalLink, Github, Bot, Database, Globe, Calculator, BookOpen, X } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useState } from 'react';
+import bookRecommenderImage from '@/assets/demo-llm-book-recommender.png';
+import sslModelImage from '@/assets/demo-ssl-model.png';
 
 const projects = [
   {
     title: 'Semantic Book Recommender with Generative AI',
     description: 'An intelligent book recommendation system leveraging transformer models and semantic search to understand user preferences and suggest books with deep contextual understanding.',
-    fullDescription: 'This project revolutionizes book discovery by implementing advanced natural language processing techniques. Using transformer models like BERT and GPT, the system analyzes user reading preferences, book content, and reviews to provide highly personalized recommendations. The platform features a sophisticated semantic search engine that understands context and meaning, not just keywords. Users can input their favorite books, genres, or even describe their mood, and the AI will suggest relevant books with detailed explanations of why each recommendation fits their profile. The system also includes collaborative filtering and content-based filtering to ensure diverse and accurate suggestions.',
+    fullDescription: 'This project implements a semantic book recommender using Python, Hugging Face, FAISS, and Gradio. It transforms book descriptions into embeddings and uses FAISS vector search to find contextually similar books. Features include real-time recommendations, zero-shot classification for genre filtering, and sentiment analysis for refining suggestions. The interactive Gradio interface makes it easy for users to explore personalized book matches.  Users can input their favorite books, genres, or even describe their mood, and the AI will suggest relevant books with detailed explanations of why each recommendation fits their profile. The system also includes collaborative filtering and content-based filtering to ensure diverse and accurate suggestions.',
+    // fullDescription: 'This project revolutionizes book discovery by implementing advanced natural language processing techniques. Using transformer models like BERT and GPT, the system analyzes user reading preferences, book content, and reviews to provide highly personalized recommendations. The platform features a sophisticated semantic search engine that understands context and meaning, not just keywords. Users can input their favorite books, genres, or even describe their mood, and the AI will suggest relevant books with detailed explanations of why each recommendation fits their profile. The system also includes collaborative filtering and content-based filtering to ensure diverse and accurate suggestions.',
     tags: ['AI Magic ✨', 'NLP', 'Transformers', 'Python'],
     icon: <BookOpen className="w-6 h-6" />,
     color: 'bg-gradient-primary',
-    github: 'https://github.com/jasleen/book-recommender',
-    demo: 'https://book-ai.jasleen.dev',
-    image: '/project-images/book-recommender.jpg',
-    technologies: ['Python', 'TensorFlow', 'Hugging Face', 'React', 'FastAPI', 'PostgreSQL'],
-    features: ['Semantic Search Engine', 'Personalized Recommendations', 'Real-time Processing', 'User Preference Learning', 'Multi-language Support']
+    github: 'https://github.com/JasleenMinhas578/llm-semantic-book-recommender',
+    demo: 'https://github.com/JasleenMinhas578/llm-semantic-book-recommender',
+    image: bookRecommenderImage,
+    // image: '/project-images/book-recommender.jpg', 
+    // image: 'https://github.com/JasleenMinhas578/llm-semantic-book-recommender/blob/main/assets/demo-1.png',
+    technologies: ['Python', 'Hugging Face', 'FAISS', 'Gradio'],
+    features: ['Semantic Search', 'Real-time Recommendations', 'Zero-Shot Genre Filtering', 'Sentiment Analysis']
+    // technologies: ['Python', 'TensorFlow', 'Hugging Face', 'React', 'FastAPI', 'PostgreSQL'],
+    // features: ['Semantic Search Engine', 'Personalized Recommendations', 'Real-time Processing', 'User Preference Learning', 'Multi-language Support']
   },
   {
     title: 'Single-Image Self-Supervised Learning Model',
@@ -23,25 +30,44 @@ const projects = [
     tags: ['Self-Supervised Genius 🤖', 'Computer Vision', 'PyTorch', 'Deep Learning'],
     icon: <Bot className="w-6 h-6" />,
     color: 'bg-gradient-primary',
-    github: 'https://github.com/jasleen/ssl-single-image',
-    demo: 'https://ssl-demo.jasleen.dev',
-    image: '/project-images/ssl-model.jpg',
-    technologies: ['PyTorch', 'OpenCV', 'NumPy', 'Matplotlib', 'Jupyter', 'Docker'],
+    github: 'https://github.com/JasleenMinhas578/SelfSupervised-SingleNoisyImage-Denoising-SMU',
+    demo: 'https://github.com/JasleenMinhas578/SelfSupervised-SingleNoisyImage-Denoising-SMU',
+    image: sslModelImage,
+    // image: '/project-images/ssl-model.jpg',
+    // image: 'https://github.com/JasleenMinhas578/SelfSupervised-SingleNoisyImage-Denoising-SMU/blob/main/Output/Results_1.png',
+    technologies: ['PyTorch', 'OpenCV', 'NumPy', 'Matplotlib', 'Jupyter'],
     features: ['Single-Image Learning', 'Contrastive Learning', 'Data Augmentation', 'Feature Extraction', 'Transfer Learning']
   },
   {
     title: 'Finance Tracker WebApp',
     description: 'Beautiful and intuitive personal finance management application with real-time analytics, budget tracking, and smart spending insights.',
-    fullDescription: 'A comprehensive personal finance management platform that helps users take control of their financial health. The application features intuitive expense tracking, budget management, and financial goal setting. Real-time analytics provide insights into spending patterns, helping users identify areas for improvement. The platform includes features like bill reminders, investment tracking, and financial goal visualization. The smart spending insights use machine learning to categorize transactions and provide personalized recommendations for saving money. The beautiful, responsive design ensures a great user experience across all devices.',
+    // fullDescription: 'A comprehensive personal finance management platform that helps users take control of their financial health. The application features intuitive expense tracking, budget management, and financial goal setting. Real-time analytics provide insights into spending patterns, helping users identify areas for improvement. The platform includes features like bill reminders, investment tracking, and financial goal visualization. The smart spending insights use machine learning to categorize transactions and provide personalized recommendations for saving money. The beautiful, responsive design ensures a great user experience across all devices.',
+    fullDescription: 'Developed as part of Master’s coursework, this React + Firebase web application helps users manage expenses and budgets. Features include expense tracking, category-wise visualizations, authentication, PDF report generation, and real-time data updates. The project followed software design principles (SOLID, UML modeling) and was thoroughly tested (unit, system, exploratory) for robustness and usability.',
     tags: ['Data Meets Design 🎨', 'React', 'Firebase', 'D3.js'],
     icon: <Database className="w-6 h-6" />,
     color: 'bg-gradient-primary',
-    github: 'https://github.com/jasleen/finance-tracker',
-    demo: 'https://finance.jasleen.dev',
-    image: '/project-images/finance-tracker.jpg',
-    technologies: ['React', 'Firebase', 'D3.js', 'Chart.js', 'Material-UI', 'Node.js'],
-    features: ['Expense Tracking', 'Budget Management', 'Real-time Analytics', 'Goal Setting', 'Bill Reminders']
+    github: 'https://github.com/JasleenMinhas578/finance-tracker',
+    demo: 'https://github.com/JasleenMinhas578/finance-tracker',
+    // image: '/project-images/finance-tracker.jpg',
+    image: 'https://private-user-images.githubusercontent.com/87798922/473641315-6f22e184-00a4-420e-a101-2a011b108af2.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTYyMzE0MDMsIm5iZiI6MTc1NjIzMTEwMywicGF0aCI6Ii84Nzc5ODkyMi80NzM2NDEzMTUtNmYyMmUxODQtMDBhNC00MjBlLWExMDEtMmEwMTFiMTA4YWYyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA4MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwODI2VDE3NTgyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA2ODY1MzIwYjAyNjIwNTkzZTlhNThiYzY0NTYzYjY4NTAwN2RlZWUyZTAzMDE0NmMwNzE4YmU1NGRkMmQ5NmYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Qmc-l1aNTedqIr6emZ4LIp3-L9-GRUCiphqC70OAzmg',
+    // technologies: ['React', 'Firebase', 'D3.js', 'Chart.js', 'Material-UI', 'Node.js'],
+    // features: ['Expense Tracking', 'Budget Management', 'Real-time Analytics', 'Goal Setting', 'Bill Reminders']
+    technologies: ['React', 'Firebase', 'Chart.js', 'Material-UI', 'Jest'],
+    features: ['Expense Tracking', 'Budget Management', 'Authentication', 'PDF Export', 'Real-time Visualization']
   },
+  {
+    title: 'Math-MATE Educational Website',
+    description: 'Interactive math learning platform for K1–K3 students with games, tutorials, and progress tracking.',
+    fullDescription: 'Math-MATE is a full-stack educational website designed for teaching mathematics to K1–K3 students. Built with React.js and integrated with Unity-based interactive math games, the platform makes learning fun and engaging. It features class-wise curriculum modules, video tutorials, subscription-based access, and a database for storing student progress. Teachers and parents can monitor performance through dashboards and progress reports. The goal of Math-MATE is to create an enjoyable learning experience while reinforcing core math concepts for young learners.',
+    tags: ['EdTech', 'React', 'Unity', 'Full-Stack'],
+    icon: <Calculator className="w-6 h-6" />,
+    color: 'bg-gradient-primary',
+    github: '/not-found',
+    demo: '/not-found',
+    image: '/project-images/math-mate.jpg',
+    technologies: ['React', 'JavaScript', 'Unity', 'Database Integration', 'HTML/CSS'],
+    features: ['Interactive Games', 'Curriculum-Based Learning', 'Video Tutorials', 'Progress Tracking', 'Subscription Access']
+  }
   // {
   //   title: 'AdSnap Studio',
   //   description: 'AI-powered creative studio for generating and optimizing digital advertisements with real-time A/B testing and performance analytics.',
@@ -55,19 +81,20 @@ const projects = [
   //   technologies: ['React', 'TensorFlow', 'OpenCV', 'AWS', 'MongoDB', 'Express.js'],
   //   features: ['AI Ad Generation', 'A/B Testing', 'Performance Analytics', 'Creative Optimization', 'Multi-platform Support']
   // },
-  {
-    title: 'Math-MATE Educational Website',
-    description: 'Interactive mathematics learning platform with gamified lessons, AI-powered problem solving, and adaptive learning paths for students.',
-    fullDescription: 'A comprehensive educational platform that makes learning mathematics engaging and personalized. The platform uses adaptive learning algorithms to create customized learning paths based on each student\'s strengths and weaknesses. Gamified lessons include interactive exercises, puzzles, and challenges that make learning fun and rewarding. AI-powered problem solving provides step-by-step explanations and hints when students get stuck. The platform tracks progress and provides detailed analytics to help students and teachers identify areas for improvement. Features include virtual tutoring, practice tests, and collaborative learning tools.',
-    tags: ['EdTech Innovation 📚', 'React', 'Node.js', 'AI Tutoring'],
-    icon: <Calculator className="w-6 h-6" />,
-    color: 'bg-gradient-primary',
-    github: 'https://github.com/jasleen/math-mate',
-    demo: 'https://mathmate.jasleen.dev',
-    image: '/project-images/math-mate.jpg',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Canvas API', 'MathJax'],
-    features: ['Adaptive Learning', 'Gamified Lessons', 'AI Tutoring', 'Progress Tracking', 'Collaborative Learning']
-  }
+  // {
+  //   title: 'Math-MATE Educational Website',
+  //   description: 'Interactive mathematics learning platform with gamified lessons, AI-powered problem solving, and adaptive learning paths for students.',
+  //   fullDescription: 'A comprehensive educational platform that makes learning mathematics engaging and personalized. The platform uses adaptive learning algorithms to create customized learning paths based on each student\'s strengths and weaknesses. Gamified lessons include interactive exercises, puzzles, and challenges that make learning fun and rewarding. AI-powered problem solving provides step-by-step explanations and hints when students get stuck. The platform tracks progress and provides detailed analytics to help students and teachers identify areas for improvement. Features include virtual tutoring, practice tests, and collaborative learning tools.',
+  //   tags: ['EdTech Innovation 📚', 'React', 'Node.js', 'AI Tutoring'],
+  //   icon: <Calculator className="w-6 h-6" />,
+  //   color: 'bg-gradient-primary',
+  //   github: 'https://github.com/jasleen/math-mate',
+  //   demo: 'https://mathmate.jasleen.dev',
+  //   image: '/project-images/math-mate.jpg',
+  //   technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Canvas API', 'MathJax'],
+  //   features: ['Adaptive Learning', 'Gamified Lessons', 'AI Tutoring', 'Progress Tracking', 'Collaborative Learning']
+  // },
+  
 ];
 
 export default function Projects() {
