@@ -1,27 +1,35 @@
 import { useState } from 'react';
 import { Calendar, MapPin, Award, ChevronDown, Database, BarChart3, Cloud, Code, FileSpreadsheet, Workflow, Zap, Target } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const workExperiences = [
   {
     id: 1,
-    company: 'Sunlife Insurance Company',
+    company: 'Sunlife Global Solutions',
     role: 'Data Analyst',
     type: 'Full-time',
     period: 'Jul 2024 – Nov 2024',
-    location: 'Canada',
+    location: 'India',
     description: 'Transforming complex business data into actionable insights through advanced analytics and visualization.',
     achievements: [
-      'Created interactive dashboards using Tableau for stakeholders',
-      'Worked with AWS and Snowflake for data storage and analytics',
-      'Automated workflows using Python and Excel macros',
-      'Collaborated with business teams to deliver actionable data insights'
+      'Designed and delivered interactive dashboards and performance reports using Tableau and Power BI, enabling real-time, data-driven decision-making across multiple business units.',
+      'Automated data extraction, transformation, and reporting workflows using Python and Excel macros, improving report accuracy and reducing turnaround time by 40%.',
+      'Partnered with stakeholders to translate business requirements into data solutions, uncovering actionable insights that informed strategic decisions.',
+      'Utilized SQL and Snowflake for querying and managing large datasets, enhancing data accessibility and reliability for cross-functional teams.',
+
+      // 'Created interactive dashboards using Tableau for stakeholders',
+      // 'Worked with AWS and Snowflake for data storage and analytics',
+      // 'Automated workflows using Python and Excel macros',
+      // 'Collaborated with business teams to deliver actionable data insights'
+
+    
     ],
     tools: [
-      { name: 'Tableau', icon: <BarChart3 className="w-4 h-4" />, color: 'text-blue-600' },
-      { name: 'AWS', icon: <Cloud className="w-4 h-4" />, color: 'text-orange-500' },
-      { name: 'Snowflake', icon: <Database className="w-4 h-4" />, color: 'text-cyan-600' },
-      { name: 'Python', icon: <Code className="w-4 h-4" />, color: 'text-green-600' },
-      { name: 'Excel', icon: <FileSpreadsheet className="w-4 h-4" />, color: 'text-emerald-600' }
+      { name: 'Tableau', icon: <BarChart3 className="w-4 h-4" />, color: 'text-primary' },
+      { name: 'AWS', icon: <Cloud className="w-4 h-4" />, color: 'text-accent' },
+      { name: 'Snowflake', icon: <Database className="w-4 h-4" />, color: 'text-secondary' },
+      { name: 'Python', icon: <Code className="w-4 h-4" />, color: 'text-accent' },
+      { name: 'Excel', icon: <FileSpreadsheet className="w-4 h-4" />, color: 'text-accent' }
     ],
     color: 'bg-gradient-primary',
     highlight: 'Led cross-functional collaboration delivering key business insights'
@@ -35,20 +43,27 @@ const workExperiences = [
     location: 'India',
     description: 'Specialized in building robust data pipelines and creating compelling visualizations for enterprise systems.',
     achievements: [
-      'Built data pipelines using MuleSoft for enterprise integration',
-      'Developed Power BI dashboards integrating multiple data sources',
-      'Worked with APIs and Postman for data validation and integration',
-      'Improved data validation processes and built Capacity Management System',
-      'Recognized as Best Intern by the team leader'
+      'Built and optimized ETL pipelines for 8+ data sources using MuleSoft, reducing processing time by 70% and ensuring accurate data availability for analytics.', 
+      'Developed scalable Power BI dashboards for 4,700+ users, enabling self-service analytics and improving decision-making speed by 50%.',
+      'Improved data validation and quality checks, reducing reporting errors by 25% and increasing stakeholder trust in insights.',
+      'Collaborated with cross-functional teams in an agile environment to align data solutions with business KPIs and enhance user experience.',
+      'Worked with APIs and Postman for system integrations, ensuring seamless data flow between enterprise applications and reporting platforms.',
+      
+
+      // 'Built data pipelines using MuleSoft for enterprise integration',
+      // 'Developed Power BI dashboards integrating multiple data sources',
+      // 'Worked with APIs and Postman for data validation and integration',
+      // 'Improved data validation processes and built Capacity Management System',
+      // 'Recognized as Best Intern by the team leader'
     ],
     tools: [
-      { name: 'MuleSoft', icon: <Workflow className="w-4 h-4" />, color: 'text-blue-500' },
-      { name: 'Power BI', icon: <BarChart3 className="w-4 h-4" />, color: 'text-yellow-600' },
-      { name: 'Salesforce', icon: <Cloud className="w-4 h-4" />, color: 'text-blue-400' },
-      { name: 'APIs', icon: <Zap className="w-4 h-4" />, color: 'text-purple-600' },
-      { name: 'Postman', icon: <Target className="w-4 h-4" />, color: 'text-orange-600' }
+      { name: 'MuleSoft', icon: <Workflow className="w-4 h-4" />, color: 'text-primary' },
+      { name: 'Power BI', icon: <BarChart3 className="w-4 h-4" />, color: 'text-primary' },
+      { name: 'Salesforce', icon: <Cloud className="w-4 h-4" />, color: 'text-primary' },
+      { name: 'APIs', icon: <Zap className="w-4 h-4" />, color: 'text-accent' },
+      { name: 'Postman', icon: <Target className="w-4 h-4" />, color: 'text-accent' }
     ],
-    color: 'bg-gradient-secondary',
+    color: 'bg-gradient-primary',
     highlight: '🏆 Best Intern Award',
     award: true
   }
@@ -56,16 +71,18 @@ const workExperiences = [
 
 export default function WorkExperience() {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const { elementRef: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
+  const { elementRef: experiencesRef, isVisible: experiencesVisible } = useScrollAnimation();
 
   const toggleCard = (id: number) => {
     setExpandedCard(expandedCard === id ? null : id);
   };
 
   return (
-    <section id="work-experience" className="py-24 px-6 relative">
+    <section id="work-experience" className="py-24 px-6 relative bg-section-experience">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div ref={sectionRef} className={`text-center mb-20 scroll-fade-in ${sectionVisible ? 'animate' : ''}`}>
           <h2 className="text-5xl md:text-6xl font-display font-bold mb-6">
             Professional Journey
           </h2>
@@ -75,33 +92,35 @@ export default function WorkExperience() {
         </div>
 
         {/* Experience Timeline */}
-        <div className="relative">
+        <div ref={experiencesRef} className={`relative scroll-slide-up ${experiencesVisible ? 'animate' : ''}`}>
           {/* Timeline Line */}
-          <div className="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 w-1 h-full bg-gradient-primary rounded-full opacity-20" />
+          <div className="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 w-1 h-full bg-gradient-primary rounded-full opacity-20 hidden md:block" />
 
           <div className="space-y-12">
             {workExperiences.map((experience, index) => (
-              <div 
+              <div
                 key={experience.id}
                 className={`relative flex flex-col md:flex-row items-start ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                } gap-8 md:gap-16`}
+                } gap-8 md:gap-16 card-animate ${experiencesVisible ? 'animate' : ''}`}
+                style={{ transitionDelay: `${index * 0.15}s` }}
               >
+
                 {/* Timeline Node */}
                 <div className="absolute left-8 md:left-1/2 md:transform md:-translate-x-1/2 flex-shrink-0 z-10">
                   <div className="relative">
                     <div className="w-6 h-6 bg-gradient-primary rounded-full border-4 border-background shadow-lg animate-pulse-soft" />
                     {experience.award && (
                       <div className="absolute -top-3 -right-3">
-                        <Award className="w-6 h-6 text-yellow-500 animate-bounce-gentle" />
+                        <Award className="w-6 h-6 text-primary animate-bounce-gentle" />
                       </div>
                     )}
                   </div>
                 </div>
 
                 {/* Experience Card */}
-                <div className="flex-1 max-w-2xl ml-20 md:ml-0">
-                  <div 
+                <div className="flex-1 max-w-2xl">
+                  <div
                     className={`card-glow cursor-pointer transition-all duration-500 hover:scale-[1.02] ${
                       expandedCard === experience.id ? 'ring-2 ring-primary/30' : ''
                     }`}
@@ -111,24 +130,20 @@ export default function WorkExperience() {
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
-                          <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                            experience.type === 'Internship' 
-                              ? 'bg-accent/20 text-accent-foreground' 
-                              : 'bg-primary/20 text-primary'
-                          }`}>
+                          <span className={`px-3 py-1 rounded-full text-xs font-semibold bg-primary/20 text-primary`}>
                             {experience.type}
                           </span>
                           {experience.award && (
-                            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-700">
+                            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary/20 text-primary">
                               🏆 Award Winner
                             </span>
                           )}
                         </div>
-                        
+
                         <h3 className="text-2xl font-bold text-gradient mb-2">
                           {experience.role}
                         </h3>
-                        
+
                         <h4 className="text-xl font-semibold text-primary mb-4">
                           {experience.company}
                         </h4>
@@ -149,7 +164,9 @@ export default function WorkExperience() {
                         </p>
 
                         {experience.highlight && (
-                          <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/20 text-accent-foreground text-sm font-medium mb-6">
+                          // <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/100 text-white text-sm font-medium mb-6">
+                          <div className="inline-flex items-center px-4 py-2 rounded-full btnn-gradient text-white text-sm font-medium mb-6">
+
                             <Zap className="w-4 h-4 mr-2" />
                             {experience.highlight}
                           </div>
@@ -157,10 +174,10 @@ export default function WorkExperience() {
                       </div>
 
                       <button className="ml-4 p-2 rounded-full hover:bg-muted/50 transition-colors">
-                        <ChevronDown 
+                        <ChevronDown
                           className={`w-5 h-5 transition-transform duration-300 ${
                             expandedCard === experience.id ? 'rotate-180' : ''
-                          }`} 
+                          }`}
                         />
                       </button>
                     </div>
@@ -193,7 +210,7 @@ export default function WorkExperience() {
                         </h5>
                         <ul className="space-y-3">
                           {experience.achievements.map((achievement, achIndex) => (
-                            <li 
+                            <li
                               key={achIndex}
                               className="flex items-start gap-3 text-muted-foreground"
                               style={{ animationDelay: `${achIndex * 0.1}s` }}
@@ -214,9 +231,6 @@ export default function WorkExperience() {
                     )}
                   </div>
                 </div>
-
-                {/* Spacer for timeline alignment */}
-                <div className="hidden md:block flex-1 max-w-2xl" />
               </div>
             ))}
           </div>
@@ -228,18 +242,18 @@ export default function WorkExperience() {
             <h3 className="text-3xl font-bold mb-6">
               Professional Impact
             </h3>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-gradient mb-2">2+</div>
+                <div className="text-4xl font-bold text-gradient mb-2">1+</div>
                 <div className="text-muted-foreground">Years Experience</div>
               </div>
-              
+
               <div className="text-center">
-                <div className="text-4xl font-bold text-gradient mb-2">10+</div>
+                <div className="text-4xl font-bold text-gradient mb-2">15+</div>
                 <div className="text-muted-foreground">Technologies Mastered</div>
               </div>
-              
+
               <div className="text-center">
                 <div className="text-4xl font-bold text-gradient mb-2">1</div>
                 <div className="text-muted-foreground">Best Intern Award 🏆</div>

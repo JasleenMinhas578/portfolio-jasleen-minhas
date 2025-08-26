@@ -1,49 +1,55 @@
-import { GraduationCap, MapPin, Heart, Palette, Music, Code, Trophy } from 'lucide-react';
+import { GraduationCap, MapPin, Heart, Trophy, Baby, Award, Plane, Sparkles } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const timelineEvents = [
   {
-    year: 'Early Years',
+    year: 'Born in 2002',
     title: 'Curious Mind in India',
-    description: 'Growing up with an insatiable curiosity about how things work, spending hours sketching, painting, and wondering about the magic behind computers.',
-    icon: <Heart className="w-6 h-6" />,
-    color: 'bg-gradient-accent'
+    description: 'Growing up with an insatiable curiosity about how things work, spending hours sketching 🖌️, painting 🎨, and wondering about the magic behind computers 💻.',
+    icon: <Baby className="w-6 h-6" />,
+    color: 'bg-gradient-primary'
+  },
+  {
+    year: '2020',
+    title: 'Completed my High School',
+    description: 'Secured 96.6% in my High School boards 🏆, earning the title of District Topper 🥇.',
+    icon: <Award className="w-6 h-6" />,
+    color: 'bg-gradient-primary'
   },
   {
     year: '2020-2024',
     title: 'Bachelor\'s in AI & Machine Learning',
-    description: 'Graduated as Gold Medalist from India, diving deep into the fascinating world of artificial intelligence while nurturing my creative passions.',
+    description: 'Graduated as Gold Medalist 🏅 from Chandigarh University, diving deep into the fascinating world of artificial intelligence 🤖 while nurturing my creative passions ✨.',
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'bg-gradient-primary'
   },
   {
     year: '2024',
     title: 'Journey to Canada',
-    description: 'Made the exciting leap to St. John\'s, Newfoundland to pursue Master\'s in Computer Science at Memorial University, embracing new adventures.',
-    icon: <MapPin className="w-6 h-6" />,
-    color: 'bg-gradient-secondary'
+    description: 'Made the exciting leap to St. John\'s, Newfoundland 🇨🇦 to pursue Master\'s in Computer Science at Memorial University, embracing new adventures 🌟.',
+    icon: <Plane className="w-6 h-6" />,
+    color: 'bg-gradient-primary'
   },
   {
     year: 'Present',
     title: 'Weaving Dreams & Code',
-    description: 'Currently blending my love for machine learning with creative expression, building AI solutions while dancing, painting, and exploring storytelling.',
-    icon: <Code className="w-6 h-6" />,
+    description: 'Currently blending my love for machine learning 🧠 with creative expression, building AI solutions while dancing 💃, painting 🎨, and exploring storytelling 📚.',
+    icon: <Sparkles className="w-6 h-6" />,
     color: 'bg-gradient-primary'
   }
 ];
 
-const passions = [
-  { name: 'Painting', icon: <Palette className="w-5 h-5" />, description: 'Watercolors & Digital Art' },
-  { name: 'Dancing', icon: <Music className="w-5 h-5" />, description: 'Bharatanatyam & Contemporary' },
-  { name: 'Sketching', icon: <Heart className="w-5 h-5" />, description: 'Capturing life\'s moments' },
-  { name: 'AI Research', icon: <Code className="w-5 h-5" />, description: 'Exploring the future' }
-];
+
 
 export default function About() {
+  const { elementRef: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
+  const { elementRef: timelineRef, isVisible: timelineVisible } = useScrollAnimation();
+
   return (
-    <section id="about" className="py-24 px-6 relative">
+    <section id="about" className="py-24 px-6 relative bg-section-about">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div ref={sectionRef} className={`text-center mb-20 scroll-fade-in ${sectionVisible ? 'animate' : ''}`}>
           <h2 className="text-5xl md:text-6xl font-display font-bold mb-6">
             My Story
           </h2>
@@ -53,7 +59,7 @@ export default function About() {
         </div>
 
         {/* Timeline */}
-        <div className="relative mb-20">
+        <div ref={timelineRef} className={`relative mb-20 scroll-slide-up ${timelineVisible ? 'animate' : ''}`}>
           {/* Timeline Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-primary rounded-full opacity-20" />
           
@@ -61,7 +67,8 @@ export default function About() {
             {timelineEvents.map((event, index) => (
               <div 
                 key={index} 
-                className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} gap-8 md:gap-16`}
+                className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} gap-8 md:gap-16 timeline-animate ${timelineVisible ? 'animate' : ''}`}
+                style={{ transitionDelay: `${index * 0.15}s` }}
               >
                 {/* Content Card */}
                 <div className="flex-1 max-w-lg">
@@ -71,7 +78,7 @@ export default function About() {
                     </div>
                     
                     <div className="mb-3">
-                      <span className="text-sm font-semibold text-primary/70 uppercase tracking-wide">
+                      <span className="text-sm font-semibold text-foreground uppercase tracking-wide">
                         {event.year}
                       </span>
                       <h3 className="text-2xl font-bold mt-1 mb-2">
@@ -102,35 +109,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Passions & Interests */}
-        <div className="text-center">
-          <h3 className="text-4xl font-bold mb-6">
-            Beyond the Code
-          </h3>
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-            When I'm not training neural networks, you'll find me expressing creativity through various forms of art and movement
-          </p>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {passions.map((passion, index) => (
-              <div 
-                key={index}
-                className="card-glow text-center group cursor-pointer"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="bg-gradient-secondary p-4 rounded-full w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                  {passion.icon}
-                </div>
-                <h4 className="font-bold mb-2 text-lg">
-                  {passion.name}
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  {passion.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+
       </div>
 
       {/* Floating decorations */}

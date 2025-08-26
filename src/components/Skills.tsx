@@ -1,4 +1,5 @@
 import { Brain, Database, Code, Palette, Award, Zap } from 'lucide-react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const skillCategories = [
   {
@@ -7,27 +8,29 @@ const skillCategories = [
     color: 'bg-gradient-primary',
     skills: [
       'Python', 'TensorFlow', 'Keras', 'PyTorch', 'Scikit-learn',
+      'Matplotlib', 'Seaborn', 'Plotly', 'SciPy', 'NLTK', 'spaCy', 'NLP', 'LLMs',
       'Hugging Face', 'OpenCV', 'NumPy', 'Pandas', 'Jupyter',
-      'Deep Learning', 'Computer Vision', 'NLP', 'Neural Networks'
+      'Deep Learning', 'Computer Vision', 'Neural Networks'
     ]
   },
   {
     title: 'Data & Analytics',
     icon: <Database className="w-6 h-6" />,
-    color: 'bg-gradient-secondary',
+    color: 'bg-gradient-primary',
     skills: [
       'SQL', 'NoSQL', 'MongoDB', 'AWS', 'Snowflake', 
-      'Power BI', 'Tableau', 'Apache Spark', 'Hadoop',
-      'Data Modeling', 'ETL', 'Data Visualization', 'Statistics'
+      'Power BI', 'Tableau','Excel', 'Hadoop', 'Data Warehousing',
+      'Data Analysis', 'Data Visualization', 'Data Engineering', 
+      'Data Modeling', 'ETL', 'Statistics'
     ]
   },
   {
     title: 'Development & Tools',
     icon: <Code className="w-6 h-6" />,
-    color: 'bg-gradient-accent',
+    color: 'bg-gradient-primary',
     skills: [
-      'React', 'JavaScript', 'TypeScript', 'Node.js', 'Firebase',
-      'REST APIs', 'GraphQL', 'Docker', 'Git', 'GitHub',
+      'Reactjs', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'Node.js', 'Firebase',
+      'REST APIs', 'GraphQL', 'Git', 'GitHub',
       'CI/CD', 'Linux', 'Bash', 'MuleSoft', 'Salesforce'
     ]
   },
@@ -37,39 +40,43 @@ const skillCategories = [
     color: 'bg-gradient-primary',
     skills: [
       'UI/UX Design', 'Figma', 'Adobe Creative Suite', 'Watercolor Painting',
-      'Digital Art', 'Sketching', 'Bharatanatyam', 'Contemporary Dance',
-      'Visual Storytelling', 'Color Theory', 'Typography'
+       'Sketching', 'Bhangra', 'Contemporary Dance',
+      'Visual Storytelling'
     ]
   }
 ];
 
 const achievements = [
   {
+    title: 'District Topper',
+    description: 'High School Boards - 96.6%',
+    icon: <Award className="w-10 h-10" />,
+    color: 'text-secondary'
+  },
+  {
     title: 'Gold Medalist',
     description: 'Bachelor\'s in AI & ML',
-    icon: <Award className="w-5 h-5" />,
-    color: 'text-yellow-600'
+    icon: <Award className="w-10 h-10" />,
+    color: 'text-primary'
   },
   {
     title: 'Best Intern Award',
     description: 'Emerson IT Solutions',
-    icon: <Award className="w-5 h-5" />,
-    color: 'text-purple-600'
-  },
-  {
-    title: 'Research Publications',
-    description: 'AI & ML Conference Papers',
-    icon: <Award className="w-5 h-5" />,
-    color: 'text-blue-600'
+    icon: <Award className="w-10 h-10" />,
+    color: 'text-accent'
   }
 ];
 
 export default function Skills() {
+  const { elementRef: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
+  const { elementRef: skillsRef, isVisible: skillsVisible } = useScrollAnimation();
+  const { elementRef: achievementsRef, isVisible: achievementsVisible } = useScrollAnimation();
+
   return (
-    <section id="skills" className="py-24 px-6 relative">
+    <section id="skills" className="py-24 px-6 relative bg-section-skills">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div ref={sectionRef} className={`text-center mb-20 scroll-fade-in ${sectionVisible ? 'animate' : ''}`}>
           <h2 className="text-5xl md:text-6xl font-display font-bold mb-6">
             My Toolbox
           </h2>
@@ -79,7 +86,7 @@ export default function Skills() {
         </div>
 
         {/* Skills Categories */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <div ref={skillsRef} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 scroll-stagger ${skillsVisible ? 'animate' : ''}`}>
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
@@ -101,10 +108,8 @@ export default function Skills() {
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="skill-badge"
-                    style={{ 
-                      animationDelay: `${(categoryIndex * 0.1) + (skillIndex * 0.05)}s` 
-                    }}
+                    className={`skill-badge skill-animate ${skillsVisible ? 'animate' : ''}`}
+                    style={{ transitionDelay: `${skillIndex * 0.05}s` }}
                   >
                     {skill}
                   </span>
@@ -115,7 +120,7 @@ export default function Skills() {
         </div>
 
         {/* Achievements Section */}
-        <div className="text-center mb-12">
+        <div ref={achievementsRef} className={`text-center mb-12 scroll-scale-in ${achievementsVisible ? 'animate' : ''}`}>
           <h3 className="text-4xl font-bold mb-6">
             Milestones & Recognition
           </h3>
@@ -145,7 +150,7 @@ export default function Skills() {
         </div>
 
         {/* Fun Stats */}
-        <div className="card-glow text-center bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10">
+        {/* <div className="card-glow text-center bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10">
           <h3 className="text-3xl font-bold mb-8">
             By the Numbers
           </h3>
@@ -187,7 +192,7 @@ export default function Skills() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Background Elements */}
