@@ -3,6 +3,7 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useState } from 'react';
 import bookRecommenderImage from '@/assets/demo-llm-book-recommender.png';
 import sslModelImage from '@/assets/demo-ssl-model.png';
+import financeTrackerImage from '@/assets/demo-finance-tracker.png';
 
 const projects = [
   {
@@ -49,7 +50,7 @@ const projects = [
     github: 'https://github.com/JasleenMinhas578/finance-tracker',
     demo: 'https://github.com/JasleenMinhas578/finance-tracker',
     // image: '/project-images/finance-tracker.jpg',
-    image: 'https://private-user-images.githubusercontent.com/87798922/473641315-6f22e184-00a4-420e-a101-2a011b108af2.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTYyMzE0MDMsIm5iZiI6MTc1NjIzMTEwMywicGF0aCI6Ii84Nzc5ODkyMi80NzM2NDEzMTUtNmYyMmUxODQtMDBhNC00MjBlLWExMDEtMmEwMTFiMTA4YWYyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA4MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwODI2VDE3NTgyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA2ODY1MzIwYjAyNjIwNTkzZTlhNThiYzY0NTYzYjY4NTAwN2RlZWUyZTAzMDE0NmMwNzE4YmU1NGRkMmQ5NmYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Qmc-l1aNTedqIr6emZ4LIp3-L9-GRUCiphqC70OAzmg',
+    image: financeTrackerImage,
     // technologies: ['React', 'Firebase', 'D3.js', 'Chart.js', 'Material-UI', 'Node.js'],
     // features: ['Expense Tracking', 'Budget Management', 'Real-time Analytics', 'Goal Setting', 'Bill Reminders']
     technologies: ['React', 'Firebase', 'Chart.js', 'Material-UI', 'Jest'],
