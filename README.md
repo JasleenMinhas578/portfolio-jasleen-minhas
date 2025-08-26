@@ -1,4 +1,6 @@
-# Jasleen Minhas - Portfolio Website
+# Jasleen Minhas - Portfolio Website 
+
+DEMO LINK : [jasleen-minhas.vercel.app](https://jasleen-minhas.vercel.app/)
 
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. This project showcases my professional experience, projects, skills, and personal interests in a clean and interactive design.
 
@@ -152,17 +154,12 @@ The contact form uses EmailJS. To set it up:
 
 This is a personal portfolio project, but if you find any bugs or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 🔗 Links
 
-- **Live Demo**: [Your deployed URL]
-- **LinkedIn**: [Your LinkedIn profile]
-- **GitHub**: [Your GitHub profile]
-- **Email**: [Your email]
-
+- **LinkedIn**: [https://www.linkedin.com/in/jasleen-minhas07/](https://www.linkedin.com/in/jasleen-minhas07/)
+- **GitHub**: [https://github.com/JasleenMinhas578](https://github.com/JasleenMinhas578)
+- **Email**: [Jasleen.minhas07@gmail.com](mailto:Jasleen.minhas07@gmail.com)
+  
 ---
 
 Built with ❤️ by Jasleen Minhas
