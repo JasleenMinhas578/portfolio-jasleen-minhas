@@ -1,10 +1,35 @@
 import { useState } from 'react';
-import { Calendar, MapPin, Award, ChevronDown, Database, BarChart3, Cloud, Code, FileSpreadsheet, Workflow, Zap, Target } from 'lucide-react';
+import { Calendar, MapPin, Award, ChevronDown, Database, BarChart3, Cloud, Code, FileSpreadsheet, Workflow, Zap, Target, PenTool } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const workExperiences = [
   {
     id: 1,
+    company: 'Learning Disabilities Association of Newfoundland and Labrador',
+    role: 'Full-Stack Web Developer',
+    type: 'Part-Time',
+    period: 'July 2025 – Present',
+    location: 'St. John’s, CANADA',
+    description: 'Solely designed and developed the Math-MATE educational website from scratch, delivering a fully responsive, accessible, and interactive learning platform for K1–K3 students.',
+    achievements: [
+      'Built the front-end using React.js, Next.js, HTML5, JavaScript, and TailwindCSS, creating fast-loading and fully responsive designs.',
+      'Developed Figma mockups, custom themes, and reusable UI components for interactive math lessons and dashboards.',
+      'Engineered secure Supabase-backed backend services with custom REST APIs, including authentication, database schema design, and input validation.',
+      'Implemented real-time progress tracking, dynamic content management, and interactive educational features to enhance the user experience.',
+      'Managed the entire project independently, handling both front-end and back-end development from scratch.'
+    ],
+    tools: [
+      { name: 'React.js', icon: <Code className="w-4 h-4" />, color: 'text-primary' },
+      { name: 'Next.js', icon: <Code className="w-4 h-4" />, color: 'text-accent' },
+      { name: 'TailwindCSS', icon: <Code className="w-4 h-4" />, color: 'text-secondary' },
+      { name: 'Supabase', icon: <Database className="w-4 h-4" />, color: 'text-accent' },
+      { name: 'Figma', icon: <PenTool className="w-4 h-4" />, color: 'text-primary' }
+    ],
+    color: 'bg-gradient-primary',
+    highlight: 'Independently developed the complete website from scratch, integrating front-end, back-end, and UI/UX design for a seamless learning experience.'
+  },  
+  {
+    id: 2,
     company: 'Sunlife Global Solutions',
     role: 'Data Analyst',
     type: 'Full-time',
@@ -35,7 +60,7 @@ const workExperiences = [
     highlight: 'Led cross-functional collaboration delivering key business insights'
   },
   {
-    id: 2,
+    id: 3,
     company: 'Emerson IT Solutions',
     role: 'Data Integration & Visualization Developer Intern',
     type: 'Internship',
@@ -226,7 +251,7 @@ export default function WorkExperience() {
                     {/* Click Hint */}
                     {expandedCard !== experience.id && (
                       <div className="text-xs text-muted-foreground/60 text-center mt-4">
-                        Click to view detailed achievements
+                        Click to view details of the work
                       </div>
                     )}
                   </div>
@@ -255,8 +280,8 @@ export default function WorkExperience() {
               </div>
 
               <div className="text-center">
-                <div className="text-4xl font-bold text-gradient mb-2">1</div>
-                <div className="text-muted-foreground">Best Intern Award 🏆</div>
+                <div className="text-4xl font-bold text-gradient mb-2">3</div>
+                <div className="text-muted-foreground">Awards 🏆</div>
               </div>
             </div>
           </div>

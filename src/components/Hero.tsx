@@ -79,7 +79,7 @@ export default function Hero() {
           }`}>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-6 text-muted-foreground">
               Enthusiastic{' '}
-              <span className="text-gradient font-bold">Machine Learning Engineer</span>
+              <span className="text-gradient font-bold">Web Developer, Machine Learning Engineer</span>
               {' '}&{' '}
               <span className="text-gradient font-bold">Data Analyst</span>
             </h2>

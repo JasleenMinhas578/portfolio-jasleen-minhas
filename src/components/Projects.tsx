@@ -1,9 +1,12 @@
-import { ExternalLink, Github, Bot, Database, Globe, Calculator, BookOpen, X } from 'lucide-react';
+import { ExternalLink, Github, Bot, Database, Globe, Calculator, BookOpen, X, Users, Shield } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useState } from 'react';
 import bookRecommenderImage from '@/assets/demo-llm-book-recommender.png';
 import sslModelImage from '@/assets/demo-ssl-model.png';
 import financeTrackerImage from '@/assets/demo-finance-tracker.png';
+import fraudDetectionImage from '@/assets/demo-fraud-detection.png';
+import studentStressImage from '@/assets/demo-student-stress-eda.png';
+
 
 const projects = [
   {
@@ -43,7 +46,7 @@ const projects = [
     title: 'Finance Tracker WebApp',
     description: 'Beautiful and intuitive personal finance management application with real-time analytics, budget tracking, and smart spending insights.',
     // fullDescription: 'A comprehensive personal finance management platform that helps users take control of their financial health. The application features intuitive expense tracking, budget management, and financial goal setting. Real-time analytics provide insights into spending patterns, helping users identify areas for improvement. The platform includes features like bill reminders, investment tracking, and financial goal visualization. The smart spending insights use machine learning to categorize transactions and provide personalized recommendations for saving money. The beautiful, responsive design ensures a great user experience across all devices.',
-    fullDescription: 'Developed as part of Master’s coursework, this React + Firebase web application helps users manage expenses and budgets. Features include expense tracking, category-wise visualizations, authentication, PDF report generation, and real-time data updates. The project followed software design principles (SOLID, UML modeling) and was thoroughly tested (unit, system, exploratory) for robustness and usability.',
+    fullDescription: 'Developed this React + Firebase web application helps users manage expenses and budgets. Features include expense tracking, category-wise visualizations, authentication, PDF report generation, and real-time data updates. The project followed software design principles (SOLID, UML modeling) and was thoroughly tested (unit, system, exploratory) for robustness and usability.',
     tags: ['Data Meets Design 🎨', 'React', 'Firebase', 'D3.js'],
     icon: <Database className="w-6 h-6" />,
     color: 'bg-gradient-primary',
@@ -57,18 +60,46 @@ const projects = [
     features: ['Expense Tracking', 'Budget Management', 'Authentication', 'PDF Export', 'Real-time Visualization']
   },
   {
-    title: 'Math-MATE Educational Website',
-    description: 'Interactive math learning platform for K1–K3 students with games, tutorials, and progress tracking.',
-    fullDescription: 'Math-MATE is a full-stack educational website designed for teaching mathematics to K1–K3 students. Built with React.js and integrated with Unity-based interactive math games, the platform makes learning fun and engaging. It features class-wise curriculum modules, video tutorials, subscription-based access, and a database for storing student progress. Teachers and parents can monitor performance through dashboards and progress reports. The goal of Math-MATE is to create an enjoyable learning experience while reinforcing core math concepts for young learners.',
-    tags: ['EdTech', 'React', 'Unity', 'Full-Stack'],
-    icon: <Calculator className="w-6 h-6" />,
-    color: 'bg-gradient-primary',
-    github: '/not-found',
-    demo: '/not-found',
-    image: '/project-images/math-mate.jpg',
-    technologies: ['React', 'JavaScript', 'Unity', 'Database Integration', 'HTML/CSS'],
-    features: ['Interactive Games', 'Curriculum-Based Learning', 'Video Tutorials', 'Progress Tracking', 'Subscription Access']
+    title: 'Fraud Detection with Clustering & Anomaly Analysis',
+    description: 'Unsupervised learning approach to detect fraudulent financial transactions and anomalous account behaviors.',
+    fullDescription: 'This project applies advanced unsupervised learning methods—including KMeans, DBSCAN, Isolation Forest, and LOF—to identify anomalies in financial transaction data. Conducted exploratory data analysis with feature engineering, scaling, and visualization techniques (heatmaps, cluster plots) to uncover rare transaction patterns. Transactions were segmented into behavioral clusters and high-risk anomalies were flagged, demonstrating practical techniques relevant to claims cost forecasting and fraud detection in financial systems.',
+    tags: ['Fraud Detection', 'Unsupervised Learning', 'Anomaly Detection', 'Data Analysis', 'Python'],
+    icon: <Shield className="w-6 h-6" />,
+    color: 'bg-gradient-red',
+    github: 'https://github.com/JasleenMinhas578/fraud-detection-clustering-anomaly-analysis',
+    demo: 'https://github.com/JasleenMinhas578/fraud-detection-clustering-anomaly-analysis',
+    image: fraudDetectionImage, // replace with your project image variable or URL
+    technologies: ['Python', 'NumPy', 'Pandas', 'Scikit-learn', 'Matplotlib', 'Seaborn'],
+    features: ['KMeans Clustering', 'DBSCAN', 'Isolation Forest', 'Local Outlier Factor', 'EDA & Visualization', 'Anomaly Detection']
+  },
+  
+  {
+    title: 'Student Stress & Performance Insights',
+    description: 'Analyzed lifestyle and academic performance data to predict student stress levels using classification models.',
+    fullDescription: 'This project involved exploratory data analysis on over 2,000 records of student lifestyle and academic data, uncovering correlations between study habits, sleep patterns, and stress levels. Built and evaluated multiple classification models—including Decision Tree, Random Forest, Logistic Regression, and a Stacking Ensemble—to predict student stress levels. Achieved strong accuracy and balanced class performance, providing actionable insights for student wellbeing and performance optimization.',
+    tags: ['Data Analysis', 'Machine Learning', 'Classification', 'Student Insights', 'Python'],
+    icon: <Users className="w-6 h-6" />,
+    color: 'bg-gradient-blue',
+    github: 'https://github.com/JasleenMinhas578/student-stress-performance-insights',
+    demo: 'https://github.com/JasleenMinhas578/student-stress-performance-insights',
+    image: studentStressImage, // replace with your project image variable or URL
+    technologies: ['Python', 'NumPy', 'Pandas', 'Scikit-learn', 'Matplotlib', 'Seaborn'],
+    features: ['Exploratory Data Analysis', 'Decision Tree', 'Random Forest', 'Logistic Regression', 'Stacking Ensemble', 'Feature Correlation Analysis']
   }
+  
+  // {
+  //   title: 'Math-MATE Educational Website',
+  //   description: 'Interactive math learning platform for K1–K3 students with games, tutorials, and progress tracking.',
+  //   fullDescription: 'Math-MATE is a full-stack educational website designed for teaching mathematics to K1–K3 students. Built with React.js and integrated with Unity-based interactive math games, the platform makes learning fun and engaging. It features class-wise curriculum modules, video tutorials, subscription-based access, and a database for storing student progress. Teachers and parents can monitor performance through dashboards and progress reports. The goal of Math-MATE is to create an enjoyable learning experience while reinforcing core math concepts for young learners.',
+  //   tags: ['EdTech', 'React', 'Unity', 'Full-Stack'],
+  //   icon: <Calculator className="w-6 h-6" />,
+  //   color: 'bg-gradient-primary',
+  //   github: '/not-found',
+  //   demo: '/not-found',
+  //   image: '/project-images/math-mate.jpg',
+  //   technologies: ['React', 'JavaScript', 'Unity', 'Database Integration', 'HTML/CSS'],
+  //   features: ['Interactive Games', 'Curriculum-Based Learning', 'Video Tutorials', 'Progress Tracking', 'Subscription Access']
+  // }
   // {
   //   title: 'AdSnap Studio',
   //   description: 'AI-powered creative studio for generating and optimizing digital advertisements with real-time A/B testing and performance analytics.',
