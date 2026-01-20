@@ -1,10 +1,45 @@
 import { useState } from 'react';
-import { Calendar, MapPin, Award, ChevronDown, Database, BarChart3, Cloud, Code, FileSpreadsheet, Workflow, Zap, Target, PenTool } from 'lucide-react';
+import { Calendar, MapPin, Award, ChevronDown, Database, BarChart3, Cloud, Code, FileSpreadsheet, Workflow, Zap, Target, PenTool, Github, GitBranch, Brain } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const workExperiences = [
   {
     id: 1,
+    company: 'Enaimco',
+    role: 'Software Developer Intern',
+    type: 'Internship',
+    period: 'Jan 2026 – Present',
+    location: "St. John's, Canada",
+    description: 'Developing scalable software solutions using modern web technologies and cloud services, contributing to full-stack applications and AI-powered features.',
+    achievements: [
+      'Building and maintaining full-stack applications using TypeScript, Node.js, Express, and React.js, ensuring type safety and code quality across the stack.',
+      'Designing and implementing MongoDB database schemas and queries, optimizing data storage and retrieval for high-performance applications.',
+      'Deploying and managing applications on Microsoft Azure, implementing CI/CD pipelines with GitHub Actions for automated testing and deployment.',
+      'Integrating Large Language Models (LLMs) into applications to enhance user experience with intelligent features and natural language processing capabilities.',
+      'Utilizing Python for data processing, automation scripts, and backend services, contributing to diverse technical solutions.',
+      'Collaborating with cross-functional teams using Monday.com for project management, ensuring efficient workflow and task tracking.',
+      'Implementing robust debugging strategies and error handling, improving application reliability and user experience.',
+      'Managing version control with GitHub and Git, maintaining clean codebases and facilitating collaborative development.'
+    ],
+    tools: [
+      { name: 'TypeScript', icon: <Code className="w-4 h-4" />, color: 'text-primary' },
+      { name: 'Node.js', icon: <Code className="w-4 h-4" />, color: 'text-accent' },
+      { name: 'MongoDB', icon: <Database className="w-4 h-4" />, color: 'text-secondary' },
+      { name: 'React.js', icon: <Code className="w-4 h-4" />, color: 'text-primary' },
+      { name: 'Azure', icon: <Cloud className="w-4 h-4" />, color: 'text-accent' },
+      { name: 'Python', icon: <Code className="w-4 h-4" />, color: 'text-secondary' },
+      { name: 'Express', icon: <Code className="w-4 h-4" />, color: 'text-primary' },
+      { name: 'LLMs', icon: <Brain className="w-4 h-4" />, color: 'text-accent' },
+      { name: 'Debugging', icon: <Zap className="w-4 h-4" />, color: 'text-secondary' },
+      { name: 'Monday.com', icon: <Workflow className="w-4 h-4" />, color: 'text-primary' },
+      { name: 'GitHub', icon: <Github className="w-4 h-4" />, color: 'text-secondary' },
+      { name: 'Git Actions', icon: <GitBranch className="w-4 h-4" />, color: 'text-primary' }
+    ],
+    color: 'bg-gradient-primary',
+    highlight: 'Building modern full-stack applications with AI integration and cloud deployment'
+  },
+  {
+    id: 2,
     company: 'Learning Disabilities Association of Newfoundland and Labrador',
     role: 'Full-Stack Web Developer',
     type: 'Part-Time',
@@ -29,7 +64,7 @@ const workExperiences = [
     highlight: 'Independently developed the complete website from scratch, integrating front-end, back-end, and UI/UX design for a seamless learning experience.'
   },  
   {
-    id: 2,
+    id: 3,
     company: 'Sunlife Global Solutions',
     role: 'Data Analyst',
     type: 'Full-time',
@@ -60,7 +95,7 @@ const workExperiences = [
     highlight: 'Led cross-functional collaboration delivering key business insights'
   },
   {
-    id: 3,
+    id: 4,
     company: 'Emerson IT Solutions',
     role: 'Data Integration & Visualization Developer Intern',
     type: 'Internship',
