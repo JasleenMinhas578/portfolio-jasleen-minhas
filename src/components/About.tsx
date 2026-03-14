@@ -33,7 +33,7 @@ const timelineEvents = [
   {
     year: 'Present',
     title: 'Weaving Dreams & Code',
-    description: 'Currently blending my love for machine learning and web development 🧠 with creative expression, building AI solutions while dancing 💃, painting 🎨, and exploring storytelling 📚.',
+    description: 'Currently blending my love for machine learning and web development 🧠 with creative expression, building AI solutions while dancing 💃, painting 🎨, and exploring my entrepreneurial journey 🚀.',
     icon: <Sparkles className="w-6 h-6" />,
     color: 'bg-gradient-primary'
   }
