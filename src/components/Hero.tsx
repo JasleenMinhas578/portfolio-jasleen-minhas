@@ -53,7 +53,7 @@ export default function Hero() {
             <img
               src={mypic}
               
-              alt="Jasleen Minhas - ML Engineer & Creative Soul"
+              alt="Jasleen Minhas - Software Developer"
               className="w-full h-full object-cover"
             />
           </div>
@@ -78,10 +78,11 @@ export default function Hero() {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-6 text-muted-foreground">
-              Enthusiastic{' '}
-              <span className="text-gradient font-bold">Software Developer, Web Developer, Machine Learning Engineer</span>
-              {' '}&{' '}
-              <span className="text-gradient font-bold">Data Analyst</span>
+              <span className="text-gradient font-bold">Software Developer</span>
+              {' '}|{' '}
+              <span className="text-gradient font-bold">Cloud & DevOps</span>
+              {' '}|{' '}
+              <span className="text-gradient font-bold">Full-Stack & Applied AI</span>
             </h2>
           </div>
 
@@ -89,11 +90,7 @@ export default function Hero() {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            From India 🇮🇳 to Canada 🇨🇦, pursuing a Master's in Computer Science at Memorial University, building intelligent solutions and exploring creativity through the intersection of Technology and Data.
-              {/* From India to Canada, I'm weaving together{' '} */}
-              {/* <span className="sparkle px-2 py-1 rounded-lg bg-accent/20 text-accent-foreground font-medium">AI</span>,{' '}
-              <span className="sparkle px-2 py-1 rounded-lg bg-secondary/30 text-secondary-foreground font-medium">creativity</span>, and{' '}
-              <span className="sparkle px-2 py-1 rounded-lg bg-primary/20 text-primary font-medium">storytelling</span> */}
+            I own features end to end -- from cloud infrastructure to the interface -- and turn manual work into automated, reliable systems.
             </p>
           </div>
         </div>
@@ -116,12 +113,10 @@ export default function Hero() {
             rel="noopener noreferrer"
             // className="btn-secondary group"
                         className="btn-gradient sparkle group"
-            aria-label="View Resume"
+            aria-label="Download Resume"
+            download
           >
-            {/* <svg className="w-5 h-5 mr-3 group-hover:animate-bounce-gentle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg> */}
-            View Resume 📄
+            Download Resume 📄
           </a>
           
           <div className="flex gap-4">

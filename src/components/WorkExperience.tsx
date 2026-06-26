@@ -6,83 +6,67 @@ const workExperiences = [
   {
     id: 1,
     company: 'Enaimco',
-    role: 'Software Developer Intern',
-    type: 'Internship',
+    role: 'Software Developer (Co-op)',
+    type: 'Co-op',
     period: 'Jan 2026 – Present',
     location: "St. John's, Canada",
-    description: 'Developing scalable software solutions using modern web technologies and cloud services, contributing to full-stack applications and AI-powered features.',
+    description: 'Building end-to-end features for an offshore-energy SaaS platform, from Azure infrastructure and Terraform IaC to React interfaces and AI-powered tooling.',
     achievements: [
-      'Building and maintaining full-stack applications using TypeScript, Node.js, Express, and React.js, ensuring type safety and code quality across the stack.',
-      'Designing and implementing MongoDB database schemas and queries, optimizing data storage and retrieval for high-performance applications.',
-      'Deploying and managing applications on Microsoft Azure, implementing CI/CD pipelines with GitHub Actions for automated testing and deployment.',
-      'Integrating Large Language Models (LLMs) into applications to enhance user experience with intelligent features and natural language processing capabilities.',
-      'Utilizing Python for data processing, automation scripts, and backend services, contributing to diverse technical solutions.',
-      'Collaborating with cross-functional teams using Monday.com for project management, ensuring efficient workflow and task tracking.',
-      'Implementing robust debugging strategies and error handling, improving application reliability and user experience.',
-      'Managing version control with GitHub and Git, maintaining clean codebases and facilitating collaborative development.'
+      'Built Azure Function Apps end to end with Terraform and custom RBAC, owning infrastructure-as-code for production services.',
+      'Built a self-serve media pipeline (React, TypeScript, Azure Functions) that cut a manual process from 3+ hours to under 5 minutes.',
+      'Built a full duplicate-file detection feature and ran media cleanup across 7 customers with Python, cutting storage costs by 40%.',
+      'Integrated LLMs via Azure AI Foundry and built Claude Code skills and MCP automation, including skills that helped new developers ramp up faster.'
     ],
     tools: [
       { name: 'TypeScript', icon: <Code className="w-4 h-4" />, color: 'text-primary' },
-      { name: 'Node.js', icon: <Code className="w-4 h-4" />, color: 'text-accent' },
-      { name: 'MongoDB', icon: <Database className="w-4 h-4" />, color: 'text-secondary' },
-      { name: 'React.js', icon: <Code className="w-4 h-4" />, color: 'text-primary' },
+      { name: 'React', icon: <Code className="w-4 h-4" />, color: 'text-primary' },
       { name: 'Azure', icon: <Cloud className="w-4 h-4" />, color: 'text-accent' },
+      { name: 'Terraform', icon: <Cloud className="w-4 h-4" />, color: 'text-secondary' },
       { name: 'Python', icon: <Code className="w-4 h-4" />, color: 'text-secondary' },
-      { name: 'Express', icon: <Code className="w-4 h-4" />, color: 'text-primary' },
       { name: 'LLMs', icon: <Brain className="w-4 h-4" />, color: 'text-accent' },
-      { name: 'Debugging', icon: <Zap className="w-4 h-4" />, color: 'text-secondary' },
-      { name: 'Monday.com', icon: <Workflow className="w-4 h-4" />, color: 'text-primary' },
-      { name: 'GitHub', icon: <Github className="w-4 h-4" />, color: 'text-secondary' },
-      { name: 'Git Actions', icon: <GitBranch className="w-4 h-4" />, color: 'text-primary' }
+      { name: 'MongoDB', icon: <Database className="w-4 h-4" />, color: 'text-secondary' },
+      { name: 'GitHub Actions', icon: <GitBranch className="w-4 h-4" />, color: 'text-primary' }
     ],
     color: 'bg-gradient-primary',
-    highlight: 'Building modern full-stack applications with AI integration and cloud deployment'
+    highlight: 'End-to-end feature ownership: cloud infrastructure to UI to AI tooling'
   },
   {
     id: 2,
-    company: 'Learning Disabilities Association of Newfoundland and Labrador',
-    role: 'Full-Stack Web Developer',
-    type: 'Part-Time',
-    period: 'July 2025 – Present',
-    location: 'St. John’s, CANADA',
-    description: 'Solely designed and developed the Math-MATE educational website from scratch, delivering a fully responsive, accessible, and interactive learning platform for K1–K3 students.',
+    company: "Math-MATE (LDANL)",
+    role: "Full-Stack Developer",
+    type: "Part-Time",
+    period: "July 2025 – Present",
+    location: "St. John's, Canada",
+    description: "Sole developer of an accessible math platform for young children with learning needs. Built from data modeling and backend through an accessible React frontend, testing, and CI/CD. Now in testing with students at the Learning Disabilities Association of Newfoundland and Labrador.",
     achievements: [
-      'Built the front-end using React.js, Next.js, HTML5, JavaScript, and TailwindCSS, creating fast-loading and fully responsive designs.',
-      'Developed Figma mockups, custom themes, and reusable UI components for interactive math lessons and dashboards.',
-      'Engineered secure Supabase-backed backend services with custom REST APIs, including authentication, database schema design, and input validation.',
-      'Implemented real-time progress tracking, dynamic content management, and interactive educational features to enhance the user experience.',
-      'Managed the entire project independently, handling both front-end and back-end development from scratch.'
+      'Designed the data model, built the Supabase backend (auth, REST APIs, input validation), and implemented the full React + Next.js frontend from scratch.',
+      'Built an accessible, responsive UI with TailwindCSS for K1-K3 students with learning disabilities, following WCAG guidelines.',
+      'Implemented CI/CD pipeline, real-time progress tracking, and dynamic content management.',
+      'Managed the entire project independently -- live at mathmate.ldanl.ca.'
     ],
     tools: [
-      { name: 'React.js', icon: <Code className="w-4 h-4" />, color: 'text-primary' },
+      { name: 'React', icon: <Code className="w-4 h-4" />, color: 'text-primary' },
       { name: 'Next.js', icon: <Code className="w-4 h-4" />, color: 'text-accent' },
+      { name: 'TypeScript', icon: <Code className="w-4 h-4" />, color: 'text-primary' },
       { name: 'TailwindCSS', icon: <Code className="w-4 h-4" />, color: 'text-secondary' },
       { name: 'Supabase', icon: <Database className="w-4 h-4" />, color: 'text-accent' },
-      { name: 'Figma', icon: <PenTool className="w-4 h-4" />, color: 'text-primary' }
+      { name: 'CI/CD', icon: <GitBranch className="w-4 h-4" />, color: 'text-primary' }
     ],
     color: 'bg-gradient-primary',
-    highlight: 'Independently developed the complete website from scratch, integrating front-end, back-end, and UI/UX design for a seamless learning experience.'
-  },  
+    highlight: 'Sole developer: data model to accessible frontend to CI/CD, now live with students'
+  },
   {
     id: 3,
-    company: 'Sunlife Global Solutions',
+    company: 'Sun Life Global Solutions',
     role: 'Data Analyst',
     type: 'Full-time',
-    period: 'Jul 2024 – Nov 2024',
+    period: '2024',
     location: 'India',
-    description: 'Transforming complex business data into actionable insights through advanced analytics and visualization.',
+    description: 'Built dashboards and automated reporting workflows, cutting turnaround by 40% with Python automation.',
     achievements: [
-      'Designed and delivered interactive dashboards and performance reports using Tableau and Power BI, enabling real-time, data-driven decision-making across multiple business units.',
-      'Automated data extraction, transformation, and reporting workflows using Python and Excel macros, improving report accuracy and reducing turnaround time by 40%.',
-      'Partnered with stakeholders to translate business requirements into data solutions, uncovering actionable insights that informed strategic decisions.',
-      'Utilized SQL and Snowflake for querying and managing large datasets, enhancing data accessibility and reliability for cross-functional teams.',
-
-      // 'Created interactive dashboards using Tableau for stakeholders',
-      // 'Worked with AWS and Snowflake for data storage and analytics',
-      // 'Automated workflows using Python and Excel macros',
-      // 'Collaborated with business teams to deliver actionable data insights'
-
-    
+      'Designed and delivered interactive dashboards using Tableau and Power BI for real-time decision-making across business units.',
+      'Automated data extraction, transformation, and reporting workflows using Python, reducing turnaround time by 40%.',
+      'Utilized SQL and Snowflake for querying and managing large datasets.'
     ],
     tools: [
       { name: 'Tableau', icon: <BarChart3 className="w-4 h-4" />, color: 'text-primary' },
@@ -96,25 +80,16 @@ const workExperiences = [
   },
   {
     id: 4,
-    company: 'Emerson IT Solutions',
+    company: 'Emerson',
     role: 'Data Integration & Visualization Developer Intern',
     type: 'Internship',
-    period: 'Jan 2024 – Jun 2024',
+    period: '2024',
     location: 'India',
-    description: 'Specialized in building robust data pipelines and creating compelling visualizations for enterprise systems.',
+    description: 'Built MuleSoft ETL pipelines for 8+ data sources (70% faster) and Power BI dashboards serving 4,700+ users.',
     achievements: [
-      'Built and optimized ETL pipelines for 8+ data sources using MuleSoft, reducing processing time by 70% and ensuring accurate data availability for analytics.', 
-      'Developed scalable Power BI dashboards for 4,700+ users, enabling self-service analytics and improving decision-making speed by 50%.',
-      'Improved data validation and quality checks, reducing reporting errors by 25% and increasing stakeholder trust in insights.',
-      'Collaborated with cross-functional teams in an agile environment to align data solutions with business KPIs and enhance user experience.',
-      'Worked with APIs and Postman for system integrations, ensuring seamless data flow between enterprise applications and reporting platforms.',
-      
-
-      // 'Built data pipelines using MuleSoft for enterprise integration',
-      // 'Developed Power BI dashboards integrating multiple data sources',
-      // 'Worked with APIs and Postman for data validation and integration',
-      // 'Improved data validation processes and built Capacity Management System',
-      // 'Recognized as Best Intern by the team leader'
+      'Built and optimized ETL pipelines for 8+ data sources using MuleSoft, reducing processing time by 70%.',
+      'Developed Power BI dashboards for 4,700+ users, enabling self-service analytics.',
+      'Improved data validation and quality checks, reducing reporting errors by 25%.'
     ],
     tools: [
       { name: 'MuleSoft', icon: <Workflow className="w-4 h-4" />, color: 'text-primary' },
@@ -147,7 +122,7 @@ export default function WorkExperience() {
             Professional Journey
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto">
-            From data pipelines to business insights – building impactful solutions across diverse industries and technologies
+            From cloud infrastructure to polished interfaces -- building end-to-end features across diverse industries and technologies
           </p>
         </div>
 

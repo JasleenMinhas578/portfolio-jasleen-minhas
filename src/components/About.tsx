@@ -32,8 +32,8 @@ const timelineEvents = [
   },
   {
     year: 'Present',
-    title: 'Weaving Dreams & Code',
-    description: 'Currently blending my love for machine learning and web development 🧠 with creative expression, building AI solutions while dancing 💃, painting 🎨, and exploring my entrepreneurial journey 🚀.',
+    title: 'Building End to End',
+    description: 'Software developer at Enaimco, owning features from Azure infrastructure and Terraform to React interfaces and AI tooling. Pursuing a Master\'s in CS at Memorial University while building Math-MATE and shipping real-world systems 🚀.',
     icon: <Sparkles className="w-6 h-6" />,
     color: 'bg-gradient-primary'
   }

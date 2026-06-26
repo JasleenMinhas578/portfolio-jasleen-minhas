@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Bot, Database, Globe, Calculator, BookOpen, X, Users, Shield } from 'lucide-react';
+import { ExternalLink, Github, Bot, Database, Globe, Calculator, BookOpen, X, Users, Shield, Wallet } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useState } from 'react';
 import bookRecommenderImage from '@/assets/demo-llm-book-recommender.png';
@@ -6,127 +6,88 @@ import sslModelImage from '@/assets/demo-ssl-model.png';
 import financeTrackerImage from '@/assets/demo-finance-tracker.png';
 import fraudDetectionImage from '@/assets/demo-fraud-detection.png';
 import studentStressImage from '@/assets/demo-student-stress-eda.png';
+import mathMateImage from '@/assets/demo-math-mate.png';
 
 
 const projects = [
   {
+    title: 'Math-MATE',
+    description: 'Accessible math learning platform for K1-K3 students with learning disabilities. Sole developer -- built from data modeling through accessible frontend, testing, and CI/CD. Live and in testing with students.',
+    fullDescription: 'Math-MATE is a full-stack educational platform built for the Learning Disabilities Association of Newfoundland and Labrador. As sole developer, I designed the data model, built Supabase backend services (auth, REST APIs, input validation), and implemented the entire React + Next.js frontend with TailwindCSS. The platform follows WCAG accessibility guidelines to serve young children with learning needs. Features include interactive math lessons, real-time progress tracking, dynamic content management, and CI/CD for continuous delivery. Now live and in testing with students.',
+    tags: ['Full-Stack', 'EdTech', 'Accessibility', 'React', 'Next.js'],
+    icon: <Calculator className="w-6 h-6" />,
+    color: 'bg-gradient-primary',
+    github: '',
+    demo: 'https://mathmate.ldanl.ca/',
+    image: mathMateImage,
+    technologies: ['React', 'Next.js', 'TypeScript', 'TailwindCSS', 'Supabase', 'CI/CD'],
+    features: ['Accessible UI (WCAG)', 'Real-time Progress Tracking', 'Interactive Math Lessons', 'Authentication', 'Dynamic Content Management']
+  },
+  {
+    title: 'Budget Buddy',
+    description: 'Personal budgeting app with expense tracking, category visualizations, and real-time data sync. Built with React, Firebase, and Chart.js.',
+    fullDescription: 'Budget Buddy is a React + Firebase web application that helps users manage expenses and budgets. Features include expense tracking, category-wise visualizations with Chart.js, Firebase authentication, PDF report generation, and real-time data updates. The project followed software design principles (SOLID, UML modeling) and was thoroughly tested (unit, system, exploratory) for robustness and usability.',
+    tags: ['Full-Stack', 'React', 'Firebase', 'Chart.js'],
+    icon: <Wallet className="w-6 h-6" />,
+    color: 'bg-gradient-primary',
+    github: 'https://github.com/JasleenMinhas578/BudgetBuddy',
+    demo: 'https://budget-buddy-mun.vercel.app/',
+    image: financeTrackerImage,
+    technologies: ['React', 'Firebase', 'Chart.js', 'Material-UI', 'Jest'],
+    features: ['Expense Tracking', 'Budget Management', 'Authentication', 'PDF Export', 'Real-time Visualization']
+  },
+  {
     title: 'Semantic Book Recommender with Generative AI',
-    description: 'An intelligent book recommendation system leveraging transformer models and semantic search to understand user preferences and suggest books with deep contextual understanding.',
-    fullDescription: 'This project implements a semantic book recommender using Python, Hugging Face, FAISS, and Gradio. It transforms book descriptions into embeddings and uses FAISS vector search to find contextually similar books. Features include real-time recommendations, zero-shot classification for genre filtering, and sentiment analysis for refining suggestions. The interactive Gradio interface makes it easy for users to explore personalized book matches.  Users can input their favorite books, genres, or even describe their mood, and the AI will suggest relevant books with detailed explanations of why each recommendation fits their profile. The system also includes collaborative filtering and content-based filtering to ensure diverse and accurate suggestions.',
-    // fullDescription: 'This project revolutionizes book discovery by implementing advanced natural language processing techniques. Using transformer models like BERT and GPT, the system analyzes user reading preferences, book content, and reviews to provide highly personalized recommendations. The platform features a sophisticated semantic search engine that understands context and meaning, not just keywords. Users can input their favorite books, genres, or even describe their mood, and the AI will suggest relevant books with detailed explanations of why each recommendation fits their profile. The system also includes collaborative filtering and content-based filtering to ensure diverse and accurate suggestions.',
-    tags: ['AI Magic ✨', 'NLP', 'Transformers', 'Python'],
+    description: 'Intelligent book recommendation system using transformer models, FAISS vector search, and sentiment analysis.',
+    fullDescription: 'This project implements a semantic book recommender using Python, Hugging Face, FAISS, and Gradio. It transforms book descriptions into embeddings and uses FAISS vector search to find contextually similar books. Features include real-time recommendations, zero-shot classification for genre filtering, and sentiment analysis for refining suggestions. The interactive Gradio interface makes it easy for users to explore personalized book matches.',
+    tags: ['AI', 'NLP', 'Transformers', 'Python'],
     icon: <BookOpen className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     github: 'https://github.com/JasleenMinhas578/llm-semantic-book-recommender',
     demo: 'https://github.com/JasleenMinhas578/llm-semantic-book-recommender',
     image: bookRecommenderImage,
-    // image: '/project-images/book-recommender.jpg', 
-    // image: 'https://github.com/JasleenMinhas578/llm-semantic-book-recommender/blob/main/assets/demo-1.png',
     technologies: ['Python', 'Hugging Face', 'FAISS', 'Gradio'],
     features: ['Semantic Search', 'Real-time Recommendations', 'Zero-Shot Genre Filtering', 'Sentiment Analysis']
-    // technologies: ['Python', 'TensorFlow', 'Hugging Face', 'React', 'FastAPI', 'PostgreSQL'],
-    // features: ['Semantic Search Engine', 'Personalized Recommendations', 'Real-time Processing', 'User Preference Learning', 'Multi-language Support']
   },
   {
     title: 'Single-Image Self-Supervised Learning Model',
-    description: 'Revolutionary approach to computer vision using self-supervised learning techniques that can learn meaningful representations from just a single image.',
-    fullDescription: 'This groundbreaking research project challenges the conventional wisdom that deep learning requires massive datasets. By implementing innovative self-supervised learning techniques, the model can extract meaningful features and representations from just a single image. The system uses advanced data augmentation strategies, contrastive learning, and novel loss functions to maximize information extraction from minimal data. This approach has significant implications for domains where data is scarce or expensive to collect, such as medical imaging, satellite imagery, and specialized industrial applications. The model demonstrates remarkable generalization capabilities and can be fine-tuned for various downstream tasks with minimal additional training.',
-    tags: ['Self-Supervised Genius 🤖', 'Computer Vision', 'PyTorch', 'Deep Learning'],
+    description: 'Self-supervised learning approach that learns meaningful representations from a single noisy image using contrastive methods.',
+    fullDescription: 'This research project implements self-supervised learning techniques to extract meaningful features from just a single image. The system uses advanced data augmentation strategies, contrastive learning, and novel loss functions to maximize information extraction from minimal data. This approach has implications for domains where data is scarce, such as medical imaging and satellite imagery.',
+    tags: ['Computer Vision', 'PyTorch', 'Deep Learning', 'Research'],
     icon: <Bot className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     github: 'https://github.com/JasleenMinhas578/SelfSupervised-SingleNoisyImage-Denoising-SMU',
     demo: 'https://github.com/JasleenMinhas578/SelfSupervised-SingleNoisyImage-Denoising-SMU',
     image: sslModelImage,
-    // image: '/project-images/ssl-model.jpg',
-    // image: 'https://github.com/JasleenMinhas578/SelfSupervised-SingleNoisyImage-Denoising-SMU/blob/main/Output/Results_1.png',
     technologies: ['PyTorch', 'OpenCV', 'NumPy', 'Matplotlib', 'Jupyter'],
     features: ['Single-Image Learning', 'Contrastive Learning', 'Data Augmentation', 'Feature Extraction', 'Transfer Learning']
   },
   {
-    title: 'Finance Tracker WebApp',
-    description: 'Beautiful and intuitive personal finance management application with real-time analytics, budget tracking, and smart spending insights.',
-    // fullDescription: 'A comprehensive personal finance management platform that helps users take control of their financial health. The application features intuitive expense tracking, budget management, and financial goal setting. Real-time analytics provide insights into spending patterns, helping users identify areas for improvement. The platform includes features like bill reminders, investment tracking, and financial goal visualization. The smart spending insights use machine learning to categorize transactions and provide personalized recommendations for saving money. The beautiful, responsive design ensures a great user experience across all devices.',
-    fullDescription: 'Developed this React + Firebase web application helps users manage expenses and budgets. Features include expense tracking, category-wise visualizations, authentication, PDF report generation, and real-time data updates. The project followed software design principles (SOLID, UML modeling) and was thoroughly tested (unit, system, exploratory) for robustness and usability.',
-    tags: ['Data Meets Design 🎨', 'React', 'Firebase', 'D3.js'],
-    icon: <Database className="w-6 h-6" />,
-    color: 'bg-gradient-primary',
-    github: 'https://github.com/JasleenMinhas578/finance-tracker',
-    demo: 'https://github.com/JasleenMinhas578/finance-tracker',
-    // image: '/project-images/finance-tracker.jpg',
-    image: financeTrackerImage,
-    // technologies: ['React', 'Firebase', 'D3.js', 'Chart.js', 'Material-UI', 'Node.js'],
-    // features: ['Expense Tracking', 'Budget Management', 'Real-time Analytics', 'Goal Setting', 'Bill Reminders']
-    technologies: ['React', 'Firebase', 'Chart.js', 'Material-UI', 'Jest'],
-    features: ['Expense Tracking', 'Budget Management', 'Authentication', 'PDF Export', 'Real-time Visualization']
-  },
-  {
     title: 'Fraud Detection with Clustering & Anomaly Analysis',
-    description: 'Unsupervised learning approach to detect fraudulent financial transactions and anomalous account behaviors.',
-    fullDescription: 'This project applies advanced unsupervised learning methods—including KMeans, DBSCAN, Isolation Forest, and LOF—to identify anomalies in financial transaction data. Conducted exploratory data analysis with feature engineering, scaling, and visualization techniques (heatmaps, cluster plots) to uncover rare transaction patterns. Transactions were segmented into behavioral clusters and high-risk anomalies were flagged, demonstrating practical techniques relevant to claims cost forecasting and fraud detection in financial systems.',
-    tags: ['Fraud Detection', 'Unsupervised Learning', 'Anomaly Detection', 'Data Analysis', 'Python'],
+    description: 'Unsupervised learning approach to detect fraudulent financial transactions using KMeans, DBSCAN, and Isolation Forest.',
+    fullDescription: 'This project applies unsupervised learning methods -- KMeans, DBSCAN, Isolation Forest, and LOF -- to identify anomalies in financial transaction data. Conducted exploratory data analysis with feature engineering, scaling, and visualization techniques to uncover rare transaction patterns.',
+    tags: ['Fraud Detection', 'Unsupervised Learning', 'Python'],
     icon: <Shield className="w-6 h-6" />,
-    color: 'bg-gradient-red',
+    color: 'bg-gradient-primary',
     github: 'https://github.com/JasleenMinhas578/fraud-detection-clustering-anomaly-analysis',
     demo: 'https://github.com/JasleenMinhas578/fraud-detection-clustering-anomaly-analysis',
-    image: fraudDetectionImage, // replace with your project image variable or URL
+    image: fraudDetectionImage,
     technologies: ['Python', 'NumPy', 'Pandas', 'Scikit-learn', 'Matplotlib', 'Seaborn'],
     features: ['KMeans Clustering', 'DBSCAN', 'Isolation Forest', 'Local Outlier Factor', 'EDA & Visualization', 'Anomaly Detection']
   },
-  
   {
     title: 'Student Stress & Performance Insights',
-    description: 'Analyzed lifestyle and academic performance data to predict student stress levels using classification models.',
-    fullDescription: 'This project involved exploratory data analysis on over 2,000 records of student lifestyle and academic data, uncovering correlations between study habits, sleep patterns, and stress levels. Built and evaluated multiple classification models—including Decision Tree, Random Forest, Logistic Regression, and a Stacking Ensemble—to predict student stress levels. Achieved strong accuracy and balanced class performance, providing actionable insights for student wellbeing and performance optimization.',
-    tags: ['Data Analysis', 'Machine Learning', 'Classification', 'Student Insights', 'Python'],
+    description: 'Classification models predicting student stress levels from lifestyle and academic data.',
+    fullDescription: 'Exploratory data analysis on 2,000+ records of student lifestyle and academic data, uncovering correlations between study habits, sleep patterns, and stress levels. Built and evaluated Decision Tree, Random Forest, Logistic Regression, and Stacking Ensemble models.',
+    tags: ['Data Analysis', 'Machine Learning', 'Classification', 'Python'],
     icon: <Users className="w-6 h-6" />,
-    color: 'bg-gradient-blue',
+    color: 'bg-gradient-primary',
     github: 'https://github.com/JasleenMinhas578/student-stress-performance-insights',
     demo: 'https://github.com/JasleenMinhas578/student-stress-performance-insights',
-    image: studentStressImage, // replace with your project image variable or URL
+    image: studentStressImage,
     technologies: ['Python', 'NumPy', 'Pandas', 'Scikit-learn', 'Matplotlib', 'Seaborn'],
     features: ['Exploratory Data Analysis', 'Decision Tree', 'Random Forest', 'Logistic Regression', 'Stacking Ensemble', 'Feature Correlation Analysis']
   }
-  
-  // {
-  //   title: 'Math-MATE Educational Website',
-  //   description: 'Interactive math learning platform for K1–K3 students with games, tutorials, and progress tracking.',
-  //   fullDescription: 'Math-MATE is a full-stack educational website designed for teaching mathematics to K1–K3 students. Built with React.js and integrated with Unity-based interactive math games, the platform makes learning fun and engaging. It features class-wise curriculum modules, video tutorials, subscription-based access, and a database for storing student progress. Teachers and parents can monitor performance through dashboards and progress reports. The goal of Math-MATE is to create an enjoyable learning experience while reinforcing core math concepts for young learners.',
-  //   tags: ['EdTech', 'React', 'Unity', 'Full-Stack'],
-  //   icon: <Calculator className="w-6 h-6" />,
-  //   color: 'bg-gradient-primary',
-  //   github: '/not-found',
-  //   demo: '/not-found',
-  //   image: '/project-images/math-mate.jpg',
-  //   technologies: ['React', 'JavaScript', 'Unity', 'Database Integration', 'HTML/CSS'],
-  //   features: ['Interactive Games', 'Curriculum-Based Learning', 'Video Tutorials', 'Progress Tracking', 'Subscription Access']
-  // }
-  // {
-  //   title: 'AdSnap Studio',
-  //   description: 'AI-powered creative studio for generating and optimizing digital advertisements with real-time A/B testing and performance analytics.',
-  //   fullDescription: 'An innovative platform that combines artificial intelligence with creative design to revolutionize digital advertising. The studio uses computer vision and machine learning to analyze ad performance and automatically generate optimized variations. Real-time A/B testing capabilities allow marketers to test different creative elements and messaging to maximize engagement and conversion rates. The platform includes advanced analytics that track user engagement, click-through rates, and conversion metrics. AI-powered design suggestions help create visually appealing ads that resonate with target audiences. The system also includes automated ad placement optimization across different platforms and devices.',
-  //   tags: ['Creative AI ⚡', 'Computer Vision', 'React', 'TensorFlow'],
-  //   icon: <Globe className="w-6 h-6" />,
-  //   color: 'bg-gradient-primary',
-  //   github: 'https://github.com/jasleen/adsnap-studio',
-  //   demo: 'https://adsnap.jasleen.dev',
-  //   image: '/project-images/adsnap-studio.jpg',
-  //   technologies: ['React', 'TensorFlow', 'OpenCV', 'AWS', 'MongoDB', 'Express.js'],
-  //   features: ['AI Ad Generation', 'A/B Testing', 'Performance Analytics', 'Creative Optimization', 'Multi-platform Support']
-  // },
-  // {
-  //   title: 'Math-MATE Educational Website',
-  //   description: 'Interactive mathematics learning platform with gamified lessons, AI-powered problem solving, and adaptive learning paths for students.',
-  //   fullDescription: 'A comprehensive educational platform that makes learning mathematics engaging and personalized. The platform uses adaptive learning algorithms to create customized learning paths based on each student\'s strengths and weaknesses. Gamified lessons include interactive exercises, puzzles, and challenges that make learning fun and rewarding. AI-powered problem solving provides step-by-step explanations and hints when students get stuck. The platform tracks progress and provides detailed analytics to help students and teachers identify areas for improvement. Features include virtual tutoring, practice tests, and collaborative learning tools.',
-  //   tags: ['EdTech Innovation 📚', 'React', 'Node.js', 'AI Tutoring'],
-  //   icon: <Calculator className="w-6 h-6" />,
-  //   color: 'bg-gradient-primary',
-  //   github: 'https://github.com/jasleen/math-mate',
-  //   demo: 'https://mathmate.jasleen.dev',
-  //   image: '/project-images/math-mate.jpg',
-  //   technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'Canvas API', 'MathJax'],
-  //   features: ['Adaptive Learning', 'Gamified Lessons', 'AI Tutoring', 'Progress Tracking', 'Collaborative Learning']
-  // },
-  
 ];
 
 export default function Projects() {
@@ -182,41 +143,46 @@ export default function Projects() {
                   </div>
                   
                   <div className="flex gap-3">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-xl bg-muted/50 hover:bg-primary hover:text-white transition-all duration-300 group/link"
-                      aria-label={`View ${project.title} on GitHub`}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <Github className="w-5 h-5 group-hover/link:animate-bounce-gentle" />
-                    </a>
-                    
-                    {/* <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 rounded-xl bg-muted/50 hover:bg-primary hover:text-white transition-all duration-300 group/link"
-                      aria-label={`View ${project.title} live demo`}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <ExternalLink className="w-5 h-5 group-hover/link:animate-bounce-gentle" />
-                    </a> */}
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-xl bg-muted/50 hover:bg-primary hover:text-white transition-all duration-300 group/link"
+                        aria-label={`View ${project.title} on GitHub`}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <Github className="w-5 h-5 group-hover/link:animate-bounce-gentle" />
+                      </a>
+                    )}
+                    {project.demo && project.demo !== project.github && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-xl bg-muted/50 hover:bg-primary hover:text-white transition-all duration-300 group/link"
+                        aria-label={`View ${project.title} live demo`}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <ExternalLink className="w-5 h-5 group-hover/link:animate-bounce-gentle" />
+                      </a>
+                    )}
                   </div>
                 </div>
 
                 {/* Project Image Preview */}
-                <div className="mb-6">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover rounded-xl shadow-md group-hover:shadow-lg transition-all duration-300"
-                    onError={(e) => {
-                      e.currentTarget.src = 'https://via.placeholder.com/400x200/1e1e2f/ffffff?text=Project+Preview';
-                    }}
-                  />
-                </div>
+                {project.image && (
+                  <div className="mb-6">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover rounded-xl shadow-md group-hover:shadow-lg transition-all duration-300"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                  </div>
+                )}
 
                 {/* Project Content */}
                 <div className="mb-6">
@@ -341,16 +307,18 @@ export default function Projects() {
             {/* Modal Content */}
             <div className="p-6">
               {/* Project Image */}
-              <div className="mb-6">
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full h-64 object-cover rounded-xl shadow-lg"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://via.placeholder.com/600x400/1e1e2f/ffffff?text=Project+Image';
-                  }}
-                />
-              </div>
+              {selectedProject.image && (
+                <div className="mb-6">
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="w-full h-64 object-cover rounded-xl shadow-lg"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                </div>
+              )}
 
               {/* Full Description */}
               <div className="mb-6">
@@ -405,24 +373,28 @@ export default function Projects() {
 
               {/* Action Buttons */}
               <div className="flex gap-4 pt-6 border-t border-border">
-                <a
-                  href={selectedProject.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 btn-gradient text-center"
-                >
-                  <Github className="inline mr-2 w-5 h-5" />
-                  View on GitHub
-                </a>
-                <a
-                  href={selectedProject.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 btn-gradient text-center"
-                >
-                  <ExternalLink className="inline mr-2 w-5 h-5" />
-                  Live Demo
-                </a>
+                {selectedProject.github && (
+                  <a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 btn-gradient text-center"
+                  >
+                    <Github className="inline mr-2 w-5 h-5" />
+                    View on GitHub
+                  </a>
+                )}
+                {selectedProject.demo && (
+                  <a
+                    href={selectedProject.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 btn-gradient text-center"
+                  >
+                    <ExternalLink className="inline mr-2 w-5 h-5" />
+                    Live Demo
+                  </a>
+                )}
               </div>
             </div>
           </div>

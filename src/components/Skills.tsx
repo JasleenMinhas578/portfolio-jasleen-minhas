@@ -1,47 +1,56 @@
-import { Brain, Database, Code, Palette, Award, Zap } from 'lucide-react';
+import { Brain, Database, Code, Cloud, Award, Zap, FlaskConical, BarChart3 } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const skillCategories = [
   {
-    title: 'AI & Machine Learning',
+    title: 'Cloud & DevOps',
+    icon: <Cloud className="w-6 h-6" />,
+    color: 'bg-gradient-primary',
+    skills: [
+      'Azure Functions', 'Azure Blob Storage', 'Azure AI Foundry', 'Azure RBAC',
+      'Terraform', 'IaC', 'GitHub Actions', 'CI/CD'
+    ]
+  },
+  {
+    title: 'Languages',
+    icon: <Code className="w-6 h-6" />,
+    color: 'bg-gradient-primary',
+    skills: [
+      'Python', 'TypeScript', 'JavaScript', 'SQL'
+    ]
+  },
+  {
+    title: 'Web & Backend',
+    icon: <Database className="w-6 h-6" />,
+    color: 'bg-gradient-primary',
+    skills: [
+      'React', 'Next.js', 'Node.js', 'Express', 'TailwindCSS',
+      'MongoDB', 'Firebase', 'Supabase', 'Figma'
+    ]
+  },
+  {
+    title: 'AI & ML',
     icon: <Brain className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     skills: [
-      'Python', 'TensorFlow', 'Keras', 'PyTorch', 'Scikit-learn',
-      'Matplotlib', 'Seaborn', 'Plotly', 'SciPy', 'NLTK', 'spaCy', 'NLP', 'LLMs',
-      'Hugging Face', 'OpenCV', 'NumPy', 'Pandas', 'Jupyter',
-      'Deep Learning', 'Computer Vision', 'Neural Networks'
+      'LLMs', 'Prompt Engineering', 'Azure AI Foundry', 'Claude Code', 'MCP',
+      'PyTorch', 'Hugging Face', 'Scikit-learn'
     ]
   },
   {
     title: 'Data & Analytics',
-    icon: <Database className="w-6 h-6" />,
+    icon: <BarChart3 className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     skills: [
-      'SQL', 'NoSQL', 'MongoDB', 'AWS', 'Snowflake', 
-      'Power BI', 'Tableau','Excel', 'Hadoop', 'Data Warehousing',
-      'Data Analysis', 'Data Visualization', 'Data Engineering', 
-      'Data Modeling', 'ETL', 'Statistics'
+      'Power BI', 'Tableau', 'Excel', 'Snowflake', 'ETL'
     ]
   },
   {
-    title: 'Development & Tools',
-    icon: <Code className="w-6 h-6" />,
+    title: 'Testing',
+    icon: <FlaskConical className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     skills: [
-      'Reactjs', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'Node.js', 'Firebase',
-      'REST APIs', 'GraphQL', 'Git', 'GitHub',
-      'CI/CD', 'Linux', 'Bash', 'MuleSoft', 'Salesforce'
-    ]
-  },
-  {
-    title: 'Creative & Design',
-    icon: <Palette className="w-6 h-6" />,
-    color: 'bg-gradient-primary',
-    skills: [
-      'UI/UX Design', 'Figma', 'Adobe Creative Suite', 'Watercolor Painting',
-       'Sketching', 'Bhangra', 'Contemporary Dance',
-      'Visual Storytelling'
+      'Jest', 'Cypress'
     ]
   }
 ];
@@ -81,7 +90,7 @@ export default function Skills() {
             My Toolbox
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto">
-            A dynamic collection of technical skills and creative talents, constantly evolving with every project and challenge
+            The tools and technologies I use to build, deploy, and automate
           </p>
         </div>
 
