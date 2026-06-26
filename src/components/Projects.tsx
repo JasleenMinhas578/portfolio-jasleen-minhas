@@ -7,6 +7,7 @@ import financeTrackerImage from '@/assets/demo-finance-tracker.png';
 import fraudDetectionImage from '@/assets/demo-fraud-detection.png';
 import studentStressImage from '@/assets/demo-student-stress-eda.png';
 import mathMateImage from '@/assets/demo-math-mate.png';
+import budgetBuddyImage from '@/assets/demo-budget-buddy.png';
 
 
 const projects = [
@@ -32,7 +33,7 @@ const projects = [
     color: 'bg-gradient-primary',
     github: 'https://github.com/JasleenMinhas578/BudgetBuddy',
     demo: 'https://budget-buddy-mun.vercel.app/',
-    image: financeTrackerImage,
+    image: budgetBuddyImage,
     technologies: ['React', 'Firebase', 'Chart.js', 'Material-UI', 'Jest'],
     features: ['Expense Tracking', 'Budget Management', 'Authentication', 'PDF Export', 'Real-time Visualization']
   },
