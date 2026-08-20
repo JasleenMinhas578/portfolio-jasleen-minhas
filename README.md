@@ -8,9 +8,8 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 
 - **Responsive Design**: Optimized for all devices and screen sizes
 - **Modern UI/UX**: Built with shadcn/ui components and Tailwind CSS
-- **Interactive Elements**: Smooth animations and scroll effects
+- **Interactive Elements**: Scroll-triggered animations via IntersectionObserver and CSS transitions
 - **Contact Form**: Integrated with EmailJS for seamless communication
-- **Dark/Light Mode**: Theme support with next-themes
 - **Performance Optimized**: Built with Vite for fast development and production builds
 
 ## 📋 Sections
@@ -38,11 +37,10 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 
 ### Additional Libraries
 - **React Router DOM** - Client-side routing
-- **React Hook Form** - Form handling with validation
 - **EmailJS** - Email service integration
 - **Lucide React** - Beautiful icons
-- **Framer Motion** - Animation library
-- **React Query** - Data fetching and caching
+
+Animations are hand-rolled: a `useScrollAnimation` hook (IntersectionObserver) toggles CSS classes defined in `src/index.css`. React Hook Form, Zod, and React Query ship with the shadcn/ui scaffold but aren't currently driving any site logic.
 
 ## 🚀 Getting Started
 
@@ -74,7 +72,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
    ```
 
 4. **Open your browser**
-   Navigate to `http://localhost:5173` to view the application
+   Navigate to `http://localhost:8080` to view the application (the port is set in `vite.config.ts`)
 
 ### Available Scripts
 
@@ -106,17 +104,18 @@ src/
 ## 🎨 Customization
 
 ### Personal Information
-Update your personal information in `JasleenData.json` to customize:
-- Personal details
-- Work experience
-- Projects
-- Skills
-- Education
-- Contact information
+Content is defined inline in each section component under `src/components/`, as local arrays of objects:
+- Personal details — `Hero.tsx`, `About.tsx`
+- Work experience — `WorkExperience.tsx`
+- Projects — the `projects` array at the top of `Projects.tsx`
+- Skills — `Skills.tsx`
+- Education — `Education.tsx`
+- Contact details and social links — `Contact.tsx`, `Footer.tsx`
 
 ### Styling
 - Modify Tailwind classes in component files
-- Update color scheme in `tailwind.config.ts`
+- Update the HSL design tokens and custom classes in `src/index.css` (this is where the color system, section backgrounds, gradients, and animations live)
+- Map new tokens to Tailwind in `tailwind.config.ts`
 - Customize shadcn/ui theme in `components.json`
 
 ### Content
