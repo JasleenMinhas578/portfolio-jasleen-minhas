@@ -1,18 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Menu, X, ChevronDown, Sparkles } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const isScrolled = true;
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

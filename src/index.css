@@ -53,7 +53,7 @@ All colors MUST be HSL for perfect gradient blending.
     /* Custom Gradient Variables - Darker Blue-Lavender Theme */
     /* --gradient-primary: linear-gradient(135deg, hsl(210, 45%, 60%), hsl(250, 30%, 60%), hsl(220, 35%, 50%));
     --gradient-secondary: linear-gradient(120deg, hsl(220, 33%, 97%), hsl(250, 25%, 90%)); */
-    --gradient-primary: linear-gradient(135deg, hsl(210, 63%, 39%), hsl(251, 35%, 45%), hsl(220, 53%, 46%));
+    --gradient-primary: linear-gradient(135deg, hsl(217, 91%, 36%), hsl(250, 80%, 33%), hsl(221, 83%, 35%));
     --gradient-secondary: linear-gradient(120deg, hsl(220, 33%, 97%), hsl(250, 25%, 90%));
     --gradient-accent: linear-gradient(45deg, hsl(210, 40%, 65%), hsl(220, 30%, 60%));
     --gradient-hero: linear-gradient(135deg, hsl(220, 33%, 97%) 0%, hsl(250, 20%, 90%) 25%, hsl(210, 25%, 92%) 50%, hsl(220, 30%, 91%) 100%);
