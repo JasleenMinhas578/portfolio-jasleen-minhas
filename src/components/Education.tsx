@@ -19,7 +19,7 @@ const education = [
     ],
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'bg-gradient-primary',
-    achievements: ['CGPA: 4']
+    achievements: ['CGPA: 4.0 / 4.0']
   },
   {
     degree: 'Bachelor of Engineering in Computer Science (AI & ML)',

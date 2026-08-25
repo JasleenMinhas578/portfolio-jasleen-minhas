@@ -1,14 +1,7 @@
-import { GraduationCap, MapPin, Heart, Trophy, Baby, Award, Plane, Sparkles } from 'lucide-react';
+import { Trophy, Award, Plane, Sparkles, ChevronRight, ChevronDown } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const timelineEvents = [
-  {
-    year: 'Born in 2002',
-    title: 'Curious Mind in India',
-    description: 'Growing up with an insatiable curiosity about how things work, spending hours sketching 🖌️, painting 🎨, and wondering about the magic behind computers 💻. Found peace in hiking trails 🥾 and wide open nature 🌿 — the outdoors has always been where ideas come alive.',
-    icon: <Baby className="w-6 h-6" />,
-    color: 'bg-gradient-primary'
-  },
   {
     year: '2020',
     title: 'Completed my High School',
@@ -53,57 +46,45 @@ export default function About() {
           <h2 className="text-5xl md:text-6xl font-display font-bold mb-6">
             My Story
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-            A journey of curiosity, creativity, and code – where every experience shapes the next chapter
-          </p>
         </div>
 
-        {/* Timeline */}
-        <div ref={timelineRef} className={`relative mb-20 scroll-slide-up ${timelineVisible ? 'animate' : ''}`}>
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-primary rounded-full opacity-20" />
-          
-          <div className="space-y-12">
+        {/* Timeline Row */}
+        <div ref={timelineRef} className={`scroll-fade-in ${timelineVisible ? 'animate' : ''}`}>
+          <div className="flex flex-col md:flex-row items-stretch gap-0">
             {timelineEvents.map((event, index) => (
-              <div 
-                key={index} 
-                className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} gap-8 md:gap-16 timeline-animate ${timelineVisible ? 'animate' : ''}`}
-                style={{ transitionDelay: `${index * 0.15}s` }}
-              >
-                {/* Content Card */}
-                <div className="flex-1 max-w-lg">
-                  <div className="card-glow group hover:scale-[1.02] transition-transform duration-500">
-                    <div className={`inline-flex items-center justify-center p-3 rounded-full mb-4 ${event.color} text-white`}>
-                      {event.icon}
-                    </div>
-                    
-                    <div className="mb-3">
-                      <span className="text-sm font-semibold text-foreground uppercase tracking-wide">
-                        {event.year}
-                      </span>
-                      <h3 className="text-2xl font-bold mt-1 mb-2">
-                        {event.title}
-                      </h3>
-                    </div>
-                    
-                    <p className="text-muted-foreground leading-relaxed">
-                      {event.description}
-                    </p>
+              <div key={index} className="flex flex-col md:flex-row items-stretch flex-1 min-w-0">
+                {/* Card */}
+                <div
+                  className={`card-glow flex-1 w-full h-full group hover:scale-[1.02] transition-transform duration-500 timeline-animate ${timelineVisible ? 'animate' : ''}`}
+                  style={{ transitionDelay: `${index * 0.15}s` }}
+                >
+                  <div className={`inline-flex items-center justify-center p-3 rounded-full mb-4 ${event.color} text-white`}>
+                    {event.icon}
                   </div>
+                  <span className="block text-xs font-semibold text-primary uppercase tracking-widest mb-1">
+                    {event.year}
+                  </span>
+                  <h3 className="text-lg font-bold mb-2">
+                    {event.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {event.description}
+                  </p>
                 </div>
 
-                {/* Timeline Node */}
-                <div className="relative flex-shrink-0">
-                  <div className="w-4 h-4 bg-gradient-primary rounded-full border-4 border-background shadow-lg animate-pulse-soft" />
-                  {index === timelineEvents.length - 1 && (
-                    <div className="absolute -top-2 -left-2">
-                      <Trophy className="w-8 h-8 text-accent animate-bounce-gentle" />
+                {/* Arrow between cards */}
+                {index < timelineEvents.length - 1 && (
+                  <>
+                    {/* Desktop: right arrow */}
+                    <div className="hidden md:flex items-center justify-center px-2 flex-shrink-0 self-center h-full">
+                      <ChevronRight className="w-7 h-7 text-primary/50" />
                     </div>
-                  )}
-                </div>
-
-                {/* Spacer for alignment */}
-                <div className="flex-1 max-w-lg" />
+                    {/* Mobile: down arrow */}
+                    <div className="flex md:hidden items-center justify-center py-1 self-center">
+                      <ChevronDown className="w-7 h-7 text-primary/50" />
+                    </div>
+                  </>
+                )}
               </div>
             ))}
           </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, Github, Linkedin, Instagram, Send, Heart, MapPin, Hand } from 'lucide-react';
+import { Mail, Github, Linkedin, Send, MapPin, Hand } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import emailjs from '@emailjs/browser';
@@ -18,13 +18,6 @@ const socialLinks = [
     url: 'https://www.linkedin.com/in/jasleen-minhas07/',
     color: 'hover:text-primary',
     description: 'Professional Network'
-  },
-  {
-    name: 'Instagram',
-    icon: <Instagram className="w-6 h-6" />,
-    url: 'https://instagram.com/jasleen_1410',
-    color: 'hover:text-accent',
-    description: 'Creative Journey'
   },
   {
     name: 'Email',
@@ -274,18 +267,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Fun Message */}
-            {/* <div className="card-glow text-center bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10">
-              <div className="flex justify-center mb-4">
-                <Heart className="w-8 h-8 text-primary animate-bounce-gentle" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2">
-                Let's Build Something Amazing!
-              </h3>
-              <p className="text-muted-foreground">
-                Whether it's AI, data, or creative projects, I'm excited to collaborate and bring ideas to life.
-              </p>
-            </div> */}
           </div>
         </div>
       </div>

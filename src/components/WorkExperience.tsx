@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Calendar, MapPin, Award, ChevronDown, Database, BarChart3, Cloud, Code, FileSpreadsheet, Workflow, Zap, Target, PenTool, Github, GitBranch, Brain } from 'lucide-react';
+import { Calendar, MapPin, Award, ChevronDown, Database, BarChart3, Cloud, Code, FileSpreadsheet, Workflow, Zap, Target, GitBranch, Brain } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const workExperiences = [
@@ -10,7 +10,7 @@ const workExperiences = [
     type: 'Co-op',
     period: 'Jan 2026 – Aug 2026',
     location: "St. John's, Canada",
-    description: 'Building end-to-end features for an offshore-energy SaaS platform, from Azure infrastructure and Terraform IaC to React interfaces and AI-powered tooling.',
+    description: 'Building end-to-end features for an offshore-energy SaaS platform, from Azure infrastructure and Terraform IaC to backend services, frontend interfaces, and AI-powered tooling.',
     achievements: [
       'Built Azure Function Apps end to end with Terraform and custom RBAC, owning infrastructure-as-code for production services.',
       'Built a self-serve media pipeline (React, TypeScript, Azure Functions) that cut a manual process from 3+ hours to under 5 minutes.',
@@ -61,7 +61,7 @@ const workExperiences = [
     company: 'Sun Life Global Solutions',
     role: 'Data Analyst',
     type: 'Full-time',
-    period: '2024',
+    period: 'Aug 2024 – Dec 2024',
     location: 'India',
     description: 'Built dashboards and automated reporting workflows, cutting turnaround by 40% with Python automation.',
     achievements: [
@@ -84,7 +84,7 @@ const workExperiences = [
     company: 'Emerson',
     role: 'Data Integration & Visualization Developer Intern',
     type: 'Internship',
-    period: '2024',
+    period: 'Jan 2024 – Jul 2024',
     location: 'India',
     description: 'Built MuleSoft ETL pipelines for 8+ data sources (70% faster) and Power BI dashboards serving 4,700+ users.',
     achievements: [
@@ -290,8 +290,8 @@ export default function WorkExperience() {
               </div>
 
               <div className="text-center">
-                <div className="text-4xl font-bold text-gradient mb-2">3</div>
-                <div className="text-muted-foreground">Awards 🏆</div>
+                <div className="text-4xl font-bold text-gradient mb-2">4</div>
+                <div className="text-muted-foreground">Honours & Awards 🏆</div>
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
 
   const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('work-experience')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -57,8 +57,7 @@ export default function Hero() {
           </div>
           
           {/* Decorative Ring */}
-          <div className="absolute inset-0 w-64 h-64 mx-auto rounded-full border-4 border-primary/20" 
-               style={{  }} />
+          <div className="absolute inset-0 w-64 h-64 mx-auto rounded-full border-4 border-primary/20" />
         </div>
 
         {/* Main Headline */}
@@ -101,7 +100,7 @@ export default function Hero() {
             onClick={scrollToAbout}
             className="btn-gradient sparkle group"
           >
-            Explore My Journey ✨
+            See My Work ✨
           </button>
           
           <a

@@ -2,10 +2,10 @@ import { Brain, Palette, Music, Mountain } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const passions = [
-  { name: 'Sketching', icon: <Palette className="w-5 h-5" />, description: 'Pencil drawings & watercolors' },
-  { name: 'Hiking', icon: <Mountain className="w-5 h-5" />, description: 'Trails & nature exploration' },
-  { name: 'Dancing', icon: <Music className="w-5 h-5" />, description: 'Bhangra & contemporary' },
-  { name: 'AI Research', icon: <Brain className="w-5 h-5" />, description: 'Exploring the future 🚀' }
+  { name: 'Sketching', icon: <Palette className="w-5 h-5" />, description: 'Pencil drawings and watercolors — slowing down and making something with my hands.' },
+  { name: 'Hiking', icon: <Mountain className="w-5 h-5" />, description: 'Chasing trails and wide-open landscapes — where most of my best ideas actually happen.' },
+  { name: 'Dancing', icon: <Music className="w-5 h-5" />, description: 'Bhangra and contemporary — movement as a way to reset and stay grounded.' },
+  { name: 'AI Research', icon: <Brain className="w-5 h-5" />, description: 'Reading papers, building experiments, and staying curious about where the field is heading.' }
 ];
 
 export default function BeyondTheCode() {

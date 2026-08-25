@@ -3,7 +3,6 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useState } from 'react';
 import bookRecommenderImage from '@/assets/demo-llm-book-recommender.png';
 import sslModelImage from '@/assets/demo-ssl-model.png';
-import financeTrackerImage from '@/assets/demo-finance-tracker.png';
 import fraudDetectionImage from '@/assets/demo-fraud-detection.png';
 import studentStressImage from '@/assets/demo-student-stress-eda.png';
 import mathMateImage from '@/assets/demo-math-mate.png';
@@ -14,7 +13,7 @@ const projects = [
   {
     title: 'Math-MATE',
     description: 'Accessible math learning platform for K1-K3 students with learning disabilities. Sole developer -- built from data modeling through accessible frontend, testing, and CI/CD. Live and in testing with students.',
-    fullDescription: 'Math-MATE is a full-stack educational platform built for the Learning Disabilities Association of Newfoundland and Labrador. As sole developer, I designed the data model, built Supabase backend services (auth, REST APIs, input validation), and implemented the entire React + Next.js frontend with TailwindCSS. The platform follows WCAG accessibility guidelines to serve young children with learning needs. Features include interactive math lessons, real-time progress tracking, dynamic content management, and CI/CD for continuous delivery. Now live and in testing with students.',
+    fullDescription: 'Math-MATE is a full-stack educational platform built for the Learning Disabilities Association of Newfoundland and Labrador. As sole developer, I designed the data model, built Supabase backend services (auth, REST APIs, input validation), and implemented the entire React + Next.js frontend with TailwindCSS. The platform follows WCAG accessibility guidelines to serve young children with learning needs. Features include interactive math lessons, real-time progress tracking, dynamic content management, and CI/CD for continuous delivery. Now live and in testing with students. (Source code is private — client project for LDANL.)',
     tags: ['Full-Stack', 'EdTech', 'Accessibility', 'React', 'Next.js'],
     icon: <Calculator className="w-6 h-6" />,
     color: 'bg-gradient-primary',
@@ -45,7 +44,7 @@ const projects = [
     icon: <BookOpen className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     github: 'https://github.com/JasleenMinhas578/llm-semantic-book-recommender',
-    demo: 'https://github.com/JasleenMinhas578/llm-semantic-book-recommender',
+    demo: '',
     image: bookRecommenderImage,
     technologies: ['Python', 'Hugging Face', 'FAISS', 'Gradio'],
     features: ['Semantic Search', 'Real-time Recommendations', 'Zero-Shot Genre Filtering', 'Sentiment Analysis']
@@ -58,7 +57,7 @@ const projects = [
     icon: <Bot className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     github: 'https://github.com/JasleenMinhas578/SelfSupervised-SingleNoisyImage-Denoising-SMU',
-    demo: 'https://github.com/JasleenMinhas578/SelfSupervised-SingleNoisyImage-Denoising-SMU',
+    demo: '',
     image: sslModelImage,
     technologies: ['PyTorch', 'OpenCV', 'NumPy', 'Matplotlib', 'Jupyter'],
     features: ['Single-Image Learning', 'Contrastive Learning', 'Data Augmentation', 'Feature Extraction', 'Transfer Learning']
@@ -71,7 +70,7 @@ const projects = [
     icon: <Shield className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     github: 'https://github.com/JasleenMinhas578/fraud-detection-clustering-anomaly-analysis',
-    demo: 'https://github.com/JasleenMinhas578/fraud-detection-clustering-anomaly-analysis',
+    demo: '',
     image: fraudDetectionImage,
     technologies: ['Python', 'NumPy', 'Pandas', 'Scikit-learn', 'Matplotlib', 'Seaborn'],
     features: ['KMeans Clustering', 'DBSCAN', 'Isolation Forest', 'Local Outlier Factor', 'EDA & Visualization', 'Anomaly Detection']
@@ -84,7 +83,7 @@ const projects = [
     icon: <Users className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     github: 'https://github.com/JasleenMinhas578/student-stress-performance-insights',
-    demo: 'https://github.com/JasleenMinhas578/student-stress-performance-insights',
+    demo: '',
     image: studentStressImage,
     technologies: ['Python', 'NumPy', 'Pandas', 'Scikit-learn', 'Matplotlib', 'Seaborn'],
     features: ['Exploratory Data Analysis', 'Decision Tree', 'Random Forest', 'Logistic Regression', 'Stacking Ensemble', 'Feature Correlation Analysis']
@@ -121,10 +120,10 @@ export default function Projects() {
           {/* Section Header */}
           <div ref={sectionRef} className={`text-center mb-20 scroll-fade-in ${sectionVisible ? 'animate' : ''}`}>
             <h2 className="text-5xl md:text-6xl font-display font-bold mb-6">
-              My Personal Projects
+              Projects
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto">
-              A curated collection of projects where technology meets creativity, each solving real problems with innovative approaches
+              Projects I've built end to end, from idea to deployment
             </p>
           </div>
 
@@ -219,7 +218,7 @@ export default function Projects() {
           <div className="text-center mt-16">
             <div className="card-glow inline-block">
               <p className="text-lg text-muted-foreground mb-4">
-                Excited to see more? Check out my GitHub for the complete collection!
+                More projects on GitHub
               </p>
               <a
                 href="https://github.com/JasleenMinhas578"
@@ -385,7 +384,7 @@ export default function Projects() {
                     View on GitHub
                   </a>
                 )}
-                {selectedProject.demo && (
+                {selectedProject.demo && selectedProject.demo !== selectedProject.github && (
                   <a
                     href={selectedProject.demo}
                     target="_blank"

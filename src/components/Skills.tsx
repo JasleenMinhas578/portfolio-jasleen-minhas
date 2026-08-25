@@ -107,7 +107,7 @@ export default function Skills() {
             My Toolbox
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto">
-            The tools and technologies I use to build, deploy, and automate
+            The stack behind every feature I build and ship
           </p>
         </div>
 
