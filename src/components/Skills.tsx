@@ -135,7 +135,7 @@ export default function Skills() {
                   <span
                     key={skillIndex}
                     className={`skill-badge skill-animate ${skillsVisible ? 'animate' : ''}`}
-                    style={{ transitionDelay: `${skillIndex * 0.05}s` }}
+                    style={{ animationDelay: `${skillIndex * 0.05}s` }}
                   >
                     {skill}
                   </span>
