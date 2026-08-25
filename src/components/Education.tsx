@@ -145,7 +145,7 @@ export default function Education() {
                             {edu.projects.map((project, projIndex) => (
                               <span
                                 key={projIndex}
-                                className="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20"
+                                className="skill-badge"
                               >
                                 {project}
                               </span>
@@ -162,7 +162,7 @@ export default function Education() {
                               {edu.subjects.map((subject, subIndex) => (
                                 <span
                                   key={subIndex}
-                                  className="px-3 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary border border-secondary/20"
+                                  className="skill-badge"
                                 >
                                   {subject}
                                 </span>

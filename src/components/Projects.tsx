@@ -13,7 +13,7 @@ const projects = [
   {
     title: 'Math-MATE',
     description: 'Accessible math learning platform for K1-K3 students with learning disabilities. Sole developer -- built from data modeling through accessible frontend, testing, and CI/CD. Live and in testing with students.',
-    fullDescription: 'Math-MATE is a full-stack educational platform built for the Learning Disabilities Association of Newfoundland and Labrador. As sole developer, I designed the data model, built Supabase backend services (auth, REST APIs, input validation), and implemented the entire React + Next.js frontend with TailwindCSS. The platform follows WCAG accessibility guidelines to serve young children with learning needs. Features include interactive math lessons, real-time progress tracking, dynamic content management, and CI/CD for continuous delivery. Now live and in testing with students. (Source code is private — client project for LDANL.)',
+    fullDescription: 'Math-MATE is a full-stack educational platform built for the Learning Disabilities Association of Newfoundland and Labrador. As sole developer, I designed the data model, built Supabase backend services (auth, REST APIs, input validation), and implemented the entire React + Next.js frontend with TailwindCSS. The platform follows WCAG accessibility guidelines to serve young children with learning needs. Features include interactive math lessons, real-time progress tracking, dynamic content management, and CI/CD for continuous delivery. Now live and in testing with students. (Source code is private - client project for LDANL.)',
     tags: ['Full-Stack', 'EdTech', 'Accessibility', 'React', 'Next.js'],
     icon: <Calculator className="w-6 h-6" />,
     color: 'bg-gradient-primary',
@@ -199,7 +199,7 @@ export default function Projects() {
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors duration-300"
+                      className="skill-badge"
                     >
                       {tag}
                     </span>
@@ -335,7 +335,7 @@ export default function Projects() {
                   {selectedProject.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20"
+                      className="skill-badge"
                     >
                       {tech}
                     </span>
@@ -363,7 +363,7 @@ export default function Projects() {
                   {selectedProject.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 rounded-full text-sm font-medium bg-accent/10 text-accent border border-accent/20"
+                      className="skill-badge"
                     >
                       {tag}
                     </span>
