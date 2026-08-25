@@ -2,10 +2,30 @@ import { Brain, Palette, Music, Mountain } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const passions = [
-  { name: 'Sketching', icon: <Palette className="w-5 h-5" />, description: 'Pencil drawings and watercolors — slowing down and making something with my hands.' },
-  { name: 'Hiking', icon: <Mountain className="w-5 h-5" />, description: 'Chasing trails and wide-open landscapes — where most of my best ideas actually happen.' },
-  { name: 'Dancing', icon: <Music className="w-5 h-5" />, description: 'Bhangra and contemporary — movement as a way to reset and stay grounded.' },
-  { name: 'AI Research', icon: <Brain className="w-5 h-5" />, description: 'Reading papers, building experiments, and staying curious about where the field is heading.' }
+  {
+    name: 'Sketching',
+    icon: <Palette className="w-6 h-6" />,
+    description: 'Pencil drawings and watercolors — slowing down and making something with my hands.',
+    color: 'bg-gradient-primary'
+  },
+  {
+    name: 'Hiking',
+    icon: <Mountain className="w-6 h-6" />,
+    description: 'Chasing trails and wide-open landscapes — where most of my best ideas actually happen.',
+    color: 'bg-gradient-primary'
+  },
+  {
+    name: 'Dancing',
+    icon: <Music className="w-6 h-6" />,
+    description: 'Bhangra and contemporary — movement as a way to reset and stay grounded.',
+    color: 'bg-gradient-primary'
+  },
+  {
+    name: 'AI Research',
+    icon: <Brain className="w-6 h-6" />,
+    description: 'Reading papers, building experiments, and staying curious about where the field is heading.',
+    color: 'bg-gradient-primary'
+  }
 ];
 
 export default function BeyondTheCode() {
@@ -16,15 +36,15 @@ export default function BeyondTheCode() {
     <section id="beyond-the-code" className="py-24 px-6 relative bg-section-beyond">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div ref={sectionRef} className={`text-center mb-20 scroll-fade-in ${sectionVisible ? 'animate' : ''}`}>
+        <div ref={sectionRef} className={`text-center mb-12 scroll-fade-in ${sectionVisible ? 'animate' : ''}`}>
           <h2 className="text-5xl md:text-6xl font-display font-bold mb-6">
             Beyond the Code
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-6">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-4">
             When I'm not writing code, you'll find me sketching, on a trail, or on the dance floor
           </p>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            I moved from India to St. John's, Newfoundland to pursue my Master's — and the people, the coastline, and the cold have all made me a better problem-solver. Outside work, I sketch to slow down, hike to think, dance to reset, and read AI papers to stay curious. These aren't hobbies tacked onto a resume — they're part of how I work.
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+            I moved from India to St. John's, Newfoundland to pursue my Master's — and the people, the coastline, and the cold have all made me a better problem-solver. These aren't hobbies tacked onto a resume — they're part of how I work.
           </p>
         </div>
 
@@ -34,20 +54,15 @@ export default function BeyondTheCode() {
             {passions.map((passion, index) => (
               <div
                 key={index}
-                className="card-glow text-center group hover:scale-105 transition-all duration-500"
-                style={{ 
-                  opacity: passionsVisible ? 1 : 0,
-                  transform: passionsVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.95)',
-                  transition: `all 0.6s ease-out ${index * 0.1}s`
-                }}
+                className="card-glow text-center group hover:scale-[1.03] transition-transform duration-150"
               >
-                <div className="inline-flex items-center justify-center p-4 rounded-full bg-muted/20 mb-4 group-hover:animate-bounce-gentle">
+                <div className={`inline-flex items-center justify-center p-4 rounded-full mb-4 ${passion.color} text-white group-hover:scale-110 transition-transform duration-150`}>
                   {passion.icon}
                 </div>
                 <h4 className="font-bold text-lg mb-2">
                   {passion.name}
                 </h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {passion.description}
                 </p>
               </div>
