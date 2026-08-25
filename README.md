@@ -105,12 +105,12 @@ src/
 
 ### Personal Information
 Content is defined inline in each section component under `src/components/`, as local arrays of objects:
-- Personal details — `Hero.tsx`, `About.tsx`
-- Work experience — `WorkExperience.tsx`
-- Projects — the `projects` array at the top of `Projects.tsx`
-- Skills — `Skills.tsx`
-- Education — `Education.tsx`
-- Contact details and social links — `Contact.tsx`, `Footer.tsx`
+- Personal details - `Hero.tsx`, `About.tsx`
+- Work experience - `WorkExperience.tsx`
+- Projects - the `projects` array at the top of `Projects.tsx`
+- Skills - `Skills.tsx`
+- Education - `Education.tsx`
+- Contact details and social links - `Contact.tsx`, `Footer.tsx`
 
 ### Styling
 - Modify Tailwind classes in component files

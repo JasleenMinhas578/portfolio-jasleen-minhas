@@ -200,8 +200,10 @@ export default function WorkExperience() {
                         </p>
 
                         {experience.highlight && (
-                          <div className="inline-flex items-center px-4 py-2 rounded-full btn-gradient text-white text-sm font-medium mb-6">
-
+                          <div
+                            className="inline-flex items-center px-4 py-2 rounded-full text-white text-sm font-medium mb-6"
+                            style={{ background: 'var(--gradient-primary)', boxShadow: 'var(--shadow-glow)' }}
+                          >
                             <Zap className="w-4 h-4 mr-2" />
                             {experience.highlight}
                           </div>
@@ -224,13 +226,12 @@ export default function WorkExperience() {
                       </h5>
                       <div className="flex flex-wrap gap-3">
                         {experience.tools.map((tool, toolIndex) => (
-                          <div
+                          <span
                             key={toolIndex}
-                            className={`skill-badge group hover:scale-105 transition-transform duration-200 ${tool.color}`}
+                            className="skill-badge"
                           >
-                            {tool.icon}
-                            <span className="ml-2">{tool.name}</span>
-                          </div>
+                            {tool.name}
+                          </span>
                         ))}
                       </div>
                     </div>
