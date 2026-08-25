@@ -235,9 +235,9 @@ All colors MUST be HSL for perfect gradient blending.
     transform: translateY(-2px) scale(1.05);
     background: var(--gradient-primary);
     box-shadow: var(--shadow-glow);
-    /* background: var(--gradient-accent); */
     color: white;
     transition: transform 0.1s ease-out, background 0.1s ease-out, box-shadow 0.1s ease-out;
+    transition-delay: 0s !important;
   }
 
   /* Floating Animation */
