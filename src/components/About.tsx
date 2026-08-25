@@ -44,7 +44,7 @@ export default function About() {
         {/* Section Header */}
         <div ref={sectionRef} className={`text-center mb-20 scroll-fade-in ${sectionVisible ? 'animate' : ''}`}>
           <h2 className="text-5xl md:text-6xl font-display font-bold mb-6">
-            My Story
+            My Journey
           </h2>
         </div>
 

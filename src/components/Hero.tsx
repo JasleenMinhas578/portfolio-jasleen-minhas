@@ -153,7 +153,7 @@ export default function Hero() {
             aria-label="Scroll to About Section"
           >
             <div className="flex flex-col items-center space-y-2 text-muted-foreground hover:text-primary transition-colors duration-300">
-              <span className="text-sm font-medium">Discover My Story</span>
+              <span className="text-sm font-medium">See My Work</span>
               <ChevronDown className="w-6 h-6 group-hover:animate-bounce-gentle" />
             </div>
           </button>

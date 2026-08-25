@@ -20,8 +20,11 @@ export default function BeyondTheCode() {
           <h2 className="text-5xl md:text-6xl font-display font-bold mb-6">
             Beyond the Code
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-6">
             When I'm not writing code, you'll find me sketching, on a trail, or on the dance floor
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            I moved from India to St. John's, Newfoundland to pursue my Master's — and the people, the coastline, and the cold have all made me a better problem-solver. Outside work, I sketch to slow down, hike to think, dance to reset, and read AI papers to stay curious. These aren't hobbies tacked onto a resume — they're part of how I work.
           </p>
         </div>
 

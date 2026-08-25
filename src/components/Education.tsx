@@ -49,7 +49,7 @@ export default function Education() {
             Education
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto">
-            My academic journey through computer science, AI, and machine learning - building a strong foundation for innovation
+            Bachelor's in AI & ML from Chandigarh University. Now completing an MS in Computer Science at Memorial University of Newfoundland.
           </p>
         </div>
 
