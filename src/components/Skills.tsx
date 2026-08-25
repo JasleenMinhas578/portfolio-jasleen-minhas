@@ -1,22 +1,31 @@
-import { Brain, Database, Code, Cloud, Award, Zap, FlaskConical, BarChart3 } from 'lucide-react';
+import { Brain, Database, Code, Cloud, Award, Zap, FlaskConical, BarChart3, Settings } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const skillCategories = [
   {
-    title: 'Cloud & DevOps',
+    title: 'Cloud Platforms',
     icon: <Cloud className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     skills: [
-      'Azure Functions', 'Azure Blob Storage', 'Azure AI Foundry', 'Azure RBAC',
-      'Terraform', 'IaC', 'GitHub Actions', 'CI/CD'
+      'Azure', 'Azure Functions', 'Azure Blob Storage', 'Azure AI Foundry', 'Azure RBAC',
+      'AWS', 'AWS S3', 'AWS Lambda', 'AWS EC2', 'AWS Route 53'
     ]
   },
   {
-    title: 'Languages',
+    title: 'DevOps',
+    icon: <Settings className="w-6 h-6" />,
+    color: 'bg-gradient-primary',
+    skills: [
+      'Docker', 'Terraform', 'IaC', 'GitHub Actions', 'CI/CD'
+    ]
+  },
+  {
+    title: 'Languages & Frameworks',
     icon: <Code className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     skills: [
-      'Python', 'TypeScript', 'JavaScript', 'SQL'
+      'Python', 'TypeScript', 'JavaScript', 'SQL', 'Linux/Bash',
+      'HTML', 'CSS'
     ]
   },
   {
@@ -25,7 +34,7 @@ const skillCategories = [
     color: 'bg-gradient-primary',
     skills: [
       'React', 'Next.js', 'Node.js', 'Express', 'TailwindCSS',
-      'MongoDB', 'Firebase', 'Supabase', 'Figma'
+      'REST APIs', 'MongoDB', 'Mongoose', 'Zod', 'Firebase', 'Supabase', 'Figma'
     ]
   },
   {
@@ -33,7 +42,8 @@ const skillCategories = [
     icon: <Brain className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     skills: [
-      'LLMs', 'Prompt Engineering', 'Azure AI Foundry', 'Claude Code', 'MCP',
+      'LLMs', 'Prompt Engineering', 'RAG', 'Fine-tuning', 'NLP', 'Computer Vision',
+      'OpenCV', 'Azure AI Foundry', 'Claude Code', 'MCP',
       'PyTorch', 'Hugging Face', 'Scikit-learn'
     ]
   },
@@ -42,6 +52,7 @@ const skillCategories = [
     icon: <BarChart3 className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     skills: [
+      'Pandas', 'NumPy', 'Matplotlib', 'Seaborn',
       'Power BI', 'Tableau', 'Excel', 'Snowflake', 'ETL'
     ]
   },
@@ -50,7 +61,7 @@ const skillCategories = [
     icon: <FlaskConical className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     skills: [
-      'Jest', 'Cypress'
+      'Jest', 'Cypress', 'Pytest', 'Postman'
     ]
   }
 ];

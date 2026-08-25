@@ -1,4 +1,4 @@
-import { GraduationCap, Award, Brain, Database, Code, Wrench, Calculator, BookOpen, Calendar, MapPin } from 'lucide-react';
+import { GraduationCap, Award, Calendar, MapPin } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const education = [
@@ -9,6 +9,14 @@ const education = [
     location: 'St. John\'s, Newfoundland, Canada',
     focus: 'Generative AI, Machine Learning, Data Science, Software Engineering',
     projects: ['Finance Tracker WebApp', 'Semantic Book Recommender', 'Self-Supervised Learning'],
+    subjects: [
+      'Machine Learning',
+      'Software Verification & Validation',
+      'Software Design and Specification',
+      'Software Engineering',
+      'Applied Algorithms',
+      'Introduction to Data Visualization'
+    ],
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     achievements: ['CGPA: 4']
@@ -26,82 +34,11 @@ const education = [
   }
 ];
 
-const coursework = [
-  {
-    category: '🧠 Artificial Intelligence & Machine Learning',
-    icon: <Brain className="w-6 h-6" />,
-    color: 'bg-gradient-primary',
-    courses: [
-      'Foundations of AI Applications',
-      'Machine Learning (+ Lab)',
-      'Advanced Machine Learning (+ Lab)',
-      'Deep Learning (+ Lab)',
-      'Natural Language Processing (+ Lab)',
-      'Soft Computing',
-      'Artificial Intelligence (+ Lab)'
-    ]
-  },
-  {
-    category: '📊 Data Science & Databases',
-    icon: <Database className="w-6 h-6" />,
-    color: 'bg-gradient-primary',
-    courses: [
-      'Introduction to Data Science',
-      'Data Mining & Warehousing (+ Lab)',
-      'Database Management Systems (+ Lab)',
-      'Advanced Database Management (+ Lab)',
-      'Probability & Statistics / Advanced Probability & Statistics'
-    ]
-  },
-  {
-    category: '💻 Core Computer Science',
-    icon: <Code className="w-6 h-6" />,
-    color: 'bg-gradient-primary',
-    courses: [
-      'Data Structures (+ Lab)',
-      'Operating Systems (+ Lab)',
-      'Computer Networks (+ Lab)',
-      'Programming in Java (+ Lab)',
-      'Advanced Programming (+ Lab)',
-      'Object-Oriented Programming in C++ (+ Lab)',
-      'Python for Machine Learning'
-    ]
-  },
-  {
-    category: '🛠️ Software Engineering & Development',
-    icon: <Wrench className="w-6 h-6" />,
-    color: 'bg-gradient-primary',
-    courses: [
-      'Software Design and Specification',
-      'Software Verification and Validation',
-      'Design & Analysis of Algorithms (+ Lab)',
-      'Project-Based Learning in Java',
-      'Minor & Major Projects (I–III)',
-      'Industrial Training & Internship',
-      'Technical Training'
-    ]
-  },
-  {
-    category: '🔢 Mathematics & Foundations',
-    icon: <Calculator className="w-6 h-6" />,
-    color: 'bg-gradient-primary',
-    courses: [
-      'Computational Mathematics',
-      'Calculus & Vector Spaces',
-      'Probability & Statistics',
-      'Advanced Probability & Statistics',
-      'Graph Theory',
-      'Game Theory'
-    ]
-  }
-];
-
 
 
 export default function Education() {
   const { elementRef: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
   const { elementRef: educationRef, isVisible: educationVisible } = useScrollAnimation();
-  const { elementRef: courseworkRef, isVisible: courseworkVisible } = useScrollAnimation();
 
   return (
     <section id="education" className="py-24 px-6 relative bg-section-education">
@@ -109,7 +46,7 @@ export default function Education() {
         {/* Section Header */}
         <div ref={sectionRef} className={`text-center mb-20 scroll-fade-in ${sectionVisible ? 'animate' : ''}`}>
           <h2 className="text-5xl md:text-6xl font-display font-bold mb-6">
-            Education & Coursework
+            Education
           </h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto">
             My academic journey through computer science, AI, and machine learning - building a strong foundation for innovation
@@ -200,7 +137,7 @@ export default function Education() {
                           </div>
                         )}
 
-                        <div>
+                        <div className={edu.subjects ? 'mb-4' : ''}>
                           <h5 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wide">
                             Key Projects
                           </h5>
@@ -215,6 +152,24 @@ export default function Education() {
                             ))}
                           </div>
                         </div>
+
+                        {edu.subjects && (
+                          <div>
+                            <h5 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wide">
+                              Key Courses
+                            </h5>
+                            <div className="flex flex-wrap gap-2">
+                              {edu.subjects.map((subject, subIndex) => (
+                                <span
+                                  key={subIndex}
+                                  className="px-3 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary border border-secondary/20"
+                                >
+                                  {subject}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -227,56 +182,6 @@ export default function Education() {
           </div>
         </div>
 
-        {/* Coursework Section */}
-        <div ref={courseworkRef} className={`scroll-scale-in ${courseworkVisible ? 'animate' : ''}`}>
-          <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold mb-6">
-              Coursework & Subjects
-            </h3>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              A comprehensive curriculum covering AI, data science, software engineering, and foundational mathematics
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coursework.map((category, index) => (
-              <div
-                key={index}
-                className="card-glow group hover:scale-[1.02] transition-all duration-500"
-                style={{ 
-                  opacity: courseworkVisible ? 1 : 0,
-                  transform: courseworkVisible ? 'translateY(0) scale(1)' : 'translateY(20px) scale(0.95)',
-                  transition: `all 0.6s ease-out ${index * 0.1}s`
-                }}
-              >
-                {/* Category Header */}
-                <div className="flex items-center mb-6">
-                  <div className={`p-4 rounded-2xl ${category.color} text-white mr-4 group-hover:scale-110 transition-transform duration-300`}>
-                    {category.icon}
-                  </div>
-                  <h4 className="text-xl font-bold">
-                    {category.category}
-                  </h4>
-                </div>
-
-                {/* Course List */}
-                <div className="space-y-3">
-                  {category.courses.map((course, courseIndex) => (
-                    <div
-                      key={courseIndex}
-                      className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors duration-300"
-                    >
-                      <div className="w-2 h-2 rounded-full bg-primary/60 mt-2 flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground leading-relaxed">
-                        {course}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
 
       </div>

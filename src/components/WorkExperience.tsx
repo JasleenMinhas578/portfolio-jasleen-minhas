@@ -8,7 +8,7 @@ const workExperiences = [
     company: 'Enaimco',
     role: 'Software Developer (Co-op)',
     type: 'Co-op',
-    period: 'Jan 2026 – Present',
+    period: 'Jan 2026 – Aug 2026',
     location: "St. John's, Canada",
     description: 'Building end-to-end features for an offshore-energy SaaS platform, from Azure infrastructure and Terraform IaC to React interfaces and AI-powered tooling.',
     achievements: [
