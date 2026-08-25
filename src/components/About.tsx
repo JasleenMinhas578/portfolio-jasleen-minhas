@@ -5,7 +5,7 @@ const timelineEvents = [
   {
     year: 'Born in 2002',
     title: 'Curious Mind in India',
-    description: 'Growing up with an insatiable curiosity about how things work, spending hours sketching 🖌️, painting 🎨, and wondering about the magic behind computers 💻.',
+    description: 'Growing up with an insatiable curiosity about how things work, spending hours sketching 🖌️, painting 🎨, and wondering about the magic behind computers 💻. Found peace in hiking trails 🥾 and wide open nature 🌿 — the outdoors has always been where ideas come alive.',
     icon: <Baby className="w-6 h-6" />,
     color: 'bg-gradient-primary'
   },
@@ -20,7 +20,7 @@ const timelineEvents = [
     year: '2020-2024',
     title: 'Bachelor\'s in AI & Machine Learning',
     description: 'Graduated as Gold Medalist 🏅 from Chandigarh University, diving deep into the fascinating world of artificial intelligence 🤖 while nurturing my creative passions ✨.',
-    icon: <GraduationCap className="w-6 h-6" />,
+    icon: <Trophy className="w-6 h-6" />,
     color: 'bg-gradient-primary'
   },
   {

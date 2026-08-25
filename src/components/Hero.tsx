@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown, Github, Linkedin, Mail, Instagram, Sparkles, Heart, Star } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail, Sparkles, Heart, Star } from 'lucide-react';
 import mypic from '@/assets/mypic-final.png';
-
-// https://dashboard.emailjs.com/admin
 
 const FloatingElement = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
   <div 
@@ -68,7 +66,7 @@ export default function Hero() {
           <div className={`transition-all duration-1000 delay-300 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-display font-bold mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-4 leading-tight">
               Hi, I'm Jasleen Minhas {' '}
               <span className="inline-block animate-bounce-gentle text-4xl">👋</span>
             </h1>
@@ -90,7 +88,7 @@ export default function Hero() {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            I own features end to end -- from cloud infrastructure to the interface -- and turn manual work into automated, reliable systems.
+            Full-stack and cloud-native - I build features end to end and replace slow manual processes with systems that scale.
             </p>
           </div>
         </div>
@@ -99,20 +97,18 @@ export default function Hero() {
         <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 transition-all duration-1000 delay-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <button 
+          <button
             onClick={scrollToAbout}
             className="btn-gradient sparkle group"
           >
             Explore My Journey ✨
-            {/* <Sparkles className="ml-3 w-5 h-5 group-hover:animate-bounce-gentle" /> */}
           </button>
           
-          <a 
-            href="/Jasleen-minhas-resume.pdf" 
-            target="_blank" 
+          <a
+            href="/Jasleen-minhas-resume.pdf"
+            target="_blank"
             rel="noopener noreferrer"
-            // className="btn-secondary group"
-                        className="btn-gradient sparkle group"
+            className="btn-gradient sparkle group"
             aria-label="Download Resume"
             download
           >
@@ -138,21 +134,12 @@ export default function Hero() {
             >
               <Linkedin className="w-5 h-5 group-hover:animate-bounce-gentle" />
             </a>
-            <a 
+            <a
               href="mailto:jasleen.minhas07@gmail.com"
               className="btn-secondary group"
               aria-label="Email Contact"
             >
               <Mail className="w-5 h-5 group-hover:animate-bounce-gentle" />
-            </a>
-            <a 
-              href="https://instagram.com/jasleen_1410" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn-secondary group"
-              aria-label="Instagram Profile"
-            >
-              <Instagram className="w-5 h-5 group-hover:animate-bounce-gentle" />
             </a>
           </div>
         </div>

@@ -15,7 +15,8 @@ const workExperiences = [
       'Built Azure Function Apps end to end with Terraform and custom RBAC, owning infrastructure-as-code for production services.',
       'Built a self-serve media pipeline (React, TypeScript, Azure Functions) that cut a manual process from 3+ hours to under 5 minutes.',
       'Built a full duplicate-file detection feature and ran media cleanup across 7 customers with Python, cutting storage costs by 40%.',
-      'Integrated LLMs via Azure AI Foundry and built Claude Code skills and MCP automation, including skills that helped new developers ramp up faster.'
+      'Integrated LLMs via Azure AI Foundry and built Claude Code skills and MCP automation, including skills that helped new developers ramp up faster.',
+      'Won the internal AI Hackathon during the co-op term.'
     ],
     tools: [
       { name: 'TypeScript', icon: <Code className="w-4 h-4" />, color: 'text-primary' },
@@ -37,7 +38,7 @@ const workExperiences = [
     type: "Part-Time",
     period: "July 2025 – Present",
     location: "St. John's, Canada",
-    description: "Sole developer of an accessible math platform for young children with learning needs. Built from data modeling and backend through an accessible React frontend, testing, and CI/CD. Now in testing with students at the Learning Disabilities Association of Newfoundland and Labrador.",
+    description: "Sole developer of an accessible math platform for young children with learning needs. Secured $40K in initial funding. Built from data modeling and backend through an accessible React frontend, testing, and CI/CD. Now being tested with children with learning disabilities at LDANL.",
     achievements: [
       'Designed the data model, built the Supabase backend (auth, REST APIs, input validation), and implemented the full React + Next.js frontend from scratch.',
       'Built an accessible, responsive UI with TailwindCSS for K1-K3 students with learning disabilities, following WCAG guidelines.',
@@ -199,8 +200,7 @@ export default function WorkExperience() {
                         </p>
 
                         {experience.highlight && (
-                          // <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/100 text-white text-sm font-medium mb-6">
-                          <div className="inline-flex items-center px-4 py-2 rounded-full btnn-gradient text-white text-sm font-medium mb-6">
+                          <div className="inline-flex items-center px-4 py-2 rounded-full btn-gradient text-white text-sm font-medium mb-6">
 
                             <Zap className="w-4 h-4 mr-2" />
                             {experience.highlight}
@@ -285,8 +285,8 @@ export default function WorkExperience() {
               </div>
 
               <div className="text-center">
-                <div className="text-4xl font-bold text-gradient mb-2">15+</div>
-                <div className="text-muted-foreground">Technologies Mastered</div>
+                <div className="text-4xl font-bold text-gradient mb-2">40+</div>
+                <div className="text-muted-foreground">Technologies Used</div>
               </div>
 
               <div className="text-center">

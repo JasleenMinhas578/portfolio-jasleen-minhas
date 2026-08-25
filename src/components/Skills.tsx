@@ -84,6 +84,12 @@ const achievements = [
     description: 'Emerson IT Solutions',
     icon: <Award className="w-10 h-10" />,
     color: 'text-accent'
+  },
+  {
+    title: 'AI Hackathon Winner',
+    description: 'Enaimco Co-op',
+    icon: <Award className="w-10 h-10" />,
+    color: 'text-primary'
   }
 ];
 
@@ -169,50 +175,6 @@ export default function Skills() {
           </div>
         </div>
 
-        {/* Fun Stats */}
-        {/* <div className="card-glow text-center bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10">
-          <h3 className="text-3xl font-bold mb-8">
-            By the Numbers
-          </h3>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="group cursor-pointer">
-              <div className="text-4xl font-bold text-gradient mb-2 group-hover:animate-bounce-gentle">
-                50+
-              </div>
-              <div className="text-sm text-muted-foreground">
-                Projects Completed
-              </div>
-            </div>
-            
-            <div className="group cursor-pointer">
-              <div className="text-4xl font-bold text-gradient mb-2 group-hover:animate-bounce-gentle">
-                15+
-              </div>
-              <div className="text-sm text-muted-foreground">
-                Technologies Mastered
-              </div>
-            </div>
-            
-            <div className="group cursor-pointer">
-              <div className="text-4xl font-bold text-gradient mb-2 group-hover:animate-bounce-gentle">
-                3
-              </div>
-              <div className="text-sm text-muted-foreground">
-                Research Papers
-              </div>
-            </div>
-            
-            <div className="group cursor-pointer">
-              <div className="text-4xl font-bold text-gradient mb-2 group-hover:animate-bounce-gentle">
-                ∞
-              </div>
-              <div className="text-sm text-muted-foreground">
-                Curiosity & Passion
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
 
       {/* Background Elements */}
