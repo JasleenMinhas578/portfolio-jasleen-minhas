@@ -5,19 +5,19 @@ const passions = [
   {
     name: 'Sketching',
     icon: <Palette className="w-6 h-6" />,
-    description: 'Pencil drawings and watercolors — slowing down and making something with my hands.',
+    description: 'Pencil drawings and watercolors - slowing down and making something with my hands.',
     color: 'bg-gradient-primary'
   },
   {
     name: 'Hiking',
     icon: <Mountain className="w-6 h-6" />,
-    description: 'Chasing trails and wide-open landscapes — where most of my best ideas actually happen.',
+    description: 'Chasing trails and wide-open landscapes - where most of my best ideas actually happen.',
     color: 'bg-gradient-primary'
   },
   {
     name: 'Dancing',
     icon: <Music className="w-6 h-6" />,
-    description: 'Bhangra and contemporary — movement as a way to reset and stay grounded.',
+    description: 'Bhangra and contemporary - movement as a way to reset and stay grounded.',
     color: 'bg-gradient-primary'
   },
   {
@@ -44,22 +44,22 @@ export default function BeyondTheCode() {
             When I'm not writing code, you'll find me sketching, on a trail, or on the dance floor
           </p>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            I moved from India to St. John's, Newfoundland to pursue my Master's — and the people, the coastline, and the cold have all made me a better problem-solver. These aren't hobbies tacked onto a resume — they're part of how I work.
+            I moved from India to St. John's, Newfoundland to pursue my Master's - and the people, the coastline, and the cold have all made me a better problem-solver. These aren't hobbies tacked onto a resume - they're part of how I work.
           </p>
         </div>
 
         {/* Passions Grid */}
         <div ref={passionsRef} className={`scroll-scale-in ${passionsVisible ? 'animate' : ''}`}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {passions.map((passion, index) => (
               <div
                 key={index}
-                className="card-glow text-center group hover:scale-[1.03] transition-transform duration-150"
+                className="card-glow !p-5 text-center group hover:scale-[1.03] transition-transform duration-150"
               >
-                <div className={`inline-flex items-center justify-center p-4 rounded-full mb-4 ${passion.color} text-white group-hover:scale-110 transition-transform duration-150`}>
+                <div className={`inline-flex items-center justify-center p-3 rounded-full mb-3 ${passion.color} text-white group-hover:scale-110 transition-transform duration-150`}>
                   {passion.icon}
                 </div>
-                <h4 className="font-bold text-lg mb-2">
+                <h4 className="font-bold text-base mb-1">
                   {passion.name}
                 </h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">
