@@ -187,9 +187,9 @@ All colors MUST be HSL for perfect gradient blending.
   }
 
   .btn-gradient:hover {
-    transform: translateY(-2px) scale(1.02);
+    transform: scale(1.04);
     box-shadow: var(--shadow-card);
-    background: var(--gradient-accent);
+    background: var(--gradient-primary);
   }
 
   .btn-secondary {
