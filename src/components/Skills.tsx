@@ -33,7 +33,7 @@ const skillCategories = [
     icon: <Database className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     skills: [
-      'React', 'Next.js', 'Node.js', 'Express', 'TailwindCSS',
+      'React', 'Next.js', 'Node.js', 'Express', 'TailwindCSS', 'Streamlit',
       'REST APIs', 'MongoDB', 'Mongoose', 'Zod', 'Firebase', 'Supabase', 'Figma'
     ]
   },
@@ -42,8 +42,8 @@ const skillCategories = [
     icon: <Brain className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     skills: [
-      'LLMs', 'Prompt Engineering', 'RAG', 'Fine-tuning', 'NLP', 'Computer Vision',
-      'OpenCV', 'Azure AI Foundry', 'Claude Code', 'MCP',
+      'LLMs', 'Prompt Engineering', 'RAG', 'LangChain', 'FAISS', 'Fine-tuning',
+      'NLP', 'Computer Vision', 'OpenCV', 'Azure AI Foundry', 'Claude Code', 'MCP',
       'PyTorch', 'Hugging Face', 'Scikit-learn'
     ]
   },

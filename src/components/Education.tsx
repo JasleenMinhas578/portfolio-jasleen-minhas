@@ -8,7 +8,7 @@ const education = [
     duration: 'Jan 2025 – Dec 2026',
     location: 'St. John\'s, Newfoundland, Canada',
     focus: 'Generative AI, Machine Learning, Data Science, Software Engineering',
-    projects: ['Finance Tracker WebApp', 'Semantic Book Recommender', 'Self-Supervised Learning'],
+    projects: ['Budget Buddy', 'Semantic Book Recommender', 'Self-Supervised Learning'],
     subjects: [
       'Machine Learning',
       'Software Verification & Validation',

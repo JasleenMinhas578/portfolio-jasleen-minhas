@@ -1,21 +1,43 @@
 import { useState } from 'react';
-import { Calendar, MapPin, Award, ChevronDown, Database, BarChart3, Cloud, Code, FileSpreadsheet, Workflow, Zap, Target, GitBranch, Brain } from 'lucide-react';
+import { Calendar, MapPin, Award, ChevronDown, Database, BarChart3, Cloud, Code, FileSpreadsheet, Workflow, Zap, Target, GitBranch, Brain, Users, ShieldCheck } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const workExperiences = [
   {
     id: 1,
+    company: 'GNOSIS Ethical Intelligence',
+    role: 'Team Lead, Clinical Informatics and Data Integration',
+    type: 'Team Lead',
+    period: 'Sep 2026 – Present',
+    location: "St. John's, Canada",
+    description: "Leading the founding engineering team through Memorial University's AI Initiative, in partnership with the School of Graduate Studies.",
+    achievements: [
+      "Lead the founding engineering team, through Memorial University's AI Initiative in partnership with the School of Graduate Studies.",
+      'Work on data validation and reconciliation for the platform.'
+    ],
+    tools: [
+      { name: 'Team Leadership', icon: <Users className="w-4 h-4" />, color: 'text-primary' },
+      { name: 'Data Validation', icon: <ShieldCheck className="w-4 h-4" />, color: 'text-accent' },
+      { name: 'Data Reconciliation', icon: <Database className="w-4 h-4" />, color: 'text-secondary' }
+    ],
+    color: 'bg-gradient-primary',
+    highlight: 'Leading the founding engineering team'
+  },
+  {
+    id: 2,
     company: 'Enaimco',
     role: 'Software Developer (Co-op)',
     type: 'Co-op',
-    period: 'Jan 2026 – Aug 2026',
-    location: "St. John's, Canada",
-    description: 'Building end-to-end features for an offshore-energy SaaS platform, from Azure infrastructure and Terraform IaC to backend services, frontend interfaces, and AI-powered tooling.',
+    period: 'Jan 5, 2026 – Aug 28, 2026',
+    location: "St. John's, NL, Canada",
+    description: 'Built end-to-end features for an offshore-energy SaaS platform, from Azure infrastructure and Terraform IaC to backend services, frontend interfaces, and AI-powered tooling.',
     achievements: [
-      'Built Azure Function Apps end to end with Terraform and custom RBAC, owning infrastructure-as-code for production services.',
-      'Built a self-serve media pipeline (React, TypeScript, Azure Functions) that cut a manual process from 3+ hours to under 5 minutes.',
-      'Built a full duplicate-file detection feature and ran media cleanup across 7 customers with Python, cutting storage costs by 40%.',
-      'Integrated LLMs via Azure AI Foundry and built Claude Code skills and MCP automation, including skills that helped new developers ramp up faster.',
+      'Built Azure Function Apps end to end with Terraform, including custom RBAC roles for each use case.',
+      'Built a self-serve media-processing pipeline (React, TypeScript, Azure Functions) that cut a manual process from 3+ hours to under 5 minutes.',
+      'Built a full duplicate-file detection feature (MongoDB-backed) and ran cleanup across 7 customers, cutting storage costs by 40%.',
+      'Integrated LLMs through Azure AI Foundry for GIS overlay extraction and content filtering.',
+      'Built internal Claude Code skills and MCP automation.',
+      "Helped drive the team's adoption of test-driven development.",
       'Won the internal AI Hackathon during the co-op term.'
     ],
     tools: [
@@ -24,7 +46,7 @@ const workExperiences = [
       { name: 'Azure', icon: <Cloud className="w-4 h-4" />, color: 'text-accent' },
       { name: 'Terraform', icon: <Cloud className="w-4 h-4" />, color: 'text-secondary' },
       { name: 'Python', icon: <Code className="w-4 h-4" />, color: 'text-secondary' },
-      { name: 'LLMs', icon: <Brain className="w-4 h-4" />, color: 'text-accent' },
+      { name: 'Azure AI Foundry', icon: <Brain className="w-4 h-4" />, color: 'text-accent' },
       { name: 'MongoDB', icon: <Database className="w-4 h-4" />, color: 'text-secondary' },
       { name: 'GitHub Actions', icon: <GitBranch className="w-4 h-4" />, color: 'text-primary' }
     ],
@@ -32,18 +54,18 @@ const workExperiences = [
     highlight: 'End-to-end feature ownership: cloud infrastructure to UI to AI tooling'
   },
   {
-    id: 2,
-    company: "Math-MATE (LDANL)",
-    role: "Full-Stack Developer",
-    type: "Part-Time",
-    period: "July 2025 – Present",
+    id: 3,
+    company: 'Learning Disabilities Association of NL (LDANL)',
+    role: 'Full-Stack Developer, Math-MATE',
+    type: 'Part-Time',
+    period: 'July 2025 – Present',
     location: "St. John's, Canada",
-    description: "Sole developer of an accessible math platform for young children with learning needs. Secured $40K in initial funding. Built from data modeling and backend through an accessible React frontend, testing, and CI/CD. Now being tested with children with learning disabilities at LDANL.",
+    description: 'Sole developer of an accessible, interactive math-education platform for K1-K3 students with diverse learning needs. Secured $40K in initial funding. Now being tested with students at LDANL.',
     achievements: [
-      'Designed the data model, built the Supabase backend (auth, REST APIs, input validation), and implemented the full React + Next.js frontend from scratch.',
-      'Built an accessible, responsive UI with TailwindCSS for K1-K3 students with learning disabilities, following WCAG guidelines.',
-      'Implemented CI/CD pipeline, real-time progress tracking, and dynamic content management.',
-      'Managed the entire project independently -- live at mathmate.ldanl.ca.'
+      'Secured $40K in funding for the initial idea.',
+      'Designed the data model and database, and built the REST APIs behind the platform.',
+      'Built an accessible React/Next.js frontend for K1-K3 students with diverse learning needs, following WCAG 2.2.',
+      'Set up automated testing and CI/CD, managing the entire project independently -- live at mathmate.ldanl.ca.'
     ],
     tools: [
       { name: 'React', icon: <Code className="w-4 h-4" />, color: 'text-primary' },
@@ -57,34 +79,34 @@ const workExperiences = [
     highlight: 'Sole developer: data model to accessible frontend to CI/CD, now live with students'
   },
   {
-    id: 3,
+    id: 4,
     company: 'Sun Life Global Solutions',
     role: 'Data Analyst',
     type: 'Full-time',
-    period: 'Aug 2024 – Dec 2024',
+    period: 'Jul 2024 – Nov 2024',
     location: 'India',
-    description: 'Built dashboards and automated reporting workflows, cutting turnaround by 40% with Python automation.',
+    description: 'Built interactive dashboards and reports in Tableau and Power BI, and automated reporting workflows that cut turnaround time by 40%.',
     achievements: [
-      'Designed and delivered interactive dashboards using Tableau and Power BI for real-time decision-making across business units.',
-      'Automated data extraction, transformation, and reporting workflows using Python, reducing turnaround time by 40%.',
-      'Utilized SQL and Snowflake for querying and managing large datasets.'
+      'Built interactive dashboards and reports in Tableau and Power BI for real-time decision-making across business units.',
+      'Automated data extraction, transformation, and reporting with Python and Excel macros, cutting turnaround time by 40%.',
+      'Used SQL and Snowflake to query and manage large datasets.'
     ],
     tools: [
       { name: 'Tableau', icon: <BarChart3 className="w-4 h-4" />, color: 'text-primary' },
-      { name: 'AWS', icon: <Cloud className="w-4 h-4" />, color: 'text-accent' },
+      { name: 'Power BI', icon: <BarChart3 className="w-4 h-4" />, color: 'text-primary' },
       { name: 'Snowflake', icon: <Database className="w-4 h-4" />, color: 'text-secondary' },
       { name: 'Python', icon: <Code className="w-4 h-4" />, color: 'text-accent' },
       { name: 'Excel', icon: <FileSpreadsheet className="w-4 h-4" />, color: 'text-accent' }
     ],
     color: 'bg-gradient-primary',
-    highlight: 'Led cross-functional collaboration delivering key business insights'
+    highlight: 'Automated reporting workflows, cutting turnaround time by 40%'
   },
   {
-    id: 4,
-    company: 'Emerson',
+    id: 5,
+    company: 'Emerson Information Technology Solutions',
     role: 'Data Integration & Visualization Developer Intern',
     type: 'Internship',
-    period: 'Jan 2024 – Jul 2024',
+    period: 'Jan 2024 – Jun 2024',
     location: 'India',
     description: 'Built MuleSoft ETL pipelines for 8+ data sources (70% faster) and Power BI dashboards serving 4,700+ users.',
     achievements: [
@@ -281,7 +303,7 @@ export default function WorkExperience() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-gradient mb-2">1+</div>
+                <div className="text-4xl font-bold text-gradient mb-2">2+</div>
                 <div className="text-muted-foreground">Years Experience</div>
               </div>
 

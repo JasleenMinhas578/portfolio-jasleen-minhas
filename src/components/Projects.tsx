@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Bot, Database, Globe, Calculator, BookOpen, X, Users, Shield, Wallet } from 'lucide-react';
+import { ExternalLink, Github, Bot, Database, Globe, Calculator, BookOpen, X, Users, Shield, Wallet, Search } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useState } from 'react';
 import bookRecommenderImage from '@/assets/demo-llm-book-recommender.png';
@@ -7,34 +7,48 @@ import fraudDetectionImage from '@/assets/demo-fraud-detection.png';
 import studentStressImage from '@/assets/demo-student-stress-eda.png';
 import mathMateImage from '@/assets/demo-math-mate.png';
 import budgetBuddyImage from '@/assets/demo-budget-buddy.png';
+import ragProjectImage from '@/assets/demo-rag-project.png';
 
 
 const projects = [
   {
+    title: 'RAG Pipeline Explorer',
+    description: 'An interactive Streamlit app that visualizes every step of a retrieval-augmented generation pipeline: document upload, chunking, embeddings, FAISS retrieval, and answer generation with Google Gemini.',
+    fullDescription: 'RAG Pipeline Explorer is an interactive Streamlit app that visualizes every step of a retrieval-augmented generation (RAG) pipeline: document upload, chunking, embeddings, FAISS retrieval, and answer generation with Google Gemini. It also includes extra modes to compare approaches side by side -- agentic RAG, vectorless RAG, keyword-vs-vector search, and automated answer grading (LLM-as-judge) -- making it a hands-on way to see how each design decision changes what the model retrieves and answers.',
+    tags: ['AI', 'RAG', 'LLMs', 'Python', 'Streamlit'],
+    icon: <Search className="w-6 h-6" />,
+    color: 'bg-gradient-primary',
+    github: 'https://github.com/JasleenMinhas578/RAG-project',
+    demo: 'https://rag-project-jasleen.streamlit.app/',
+    image: ragProjectImage,
+    technologies: ['Python', 'Streamlit', 'FAISS', 'sentence-transformers', 'LangChain', 'Google Gemini'],
+    features: ['Step-by-step Pipeline Visualization', 'Chunking & Embeddings Explorer', 'FAISS Vector Retrieval', 'Agentic RAG Mode', 'Vectorless RAG Mode', 'Keyword vs. Vector Search Comparison', 'Automated Answer Grading (LLM-as-judge)']
+  },
+  {
     title: 'Math-MATE',
-    description: 'Accessible math learning platform for K1-K3 students with learning disabilities. Sole developer -- built from data modeling through accessible frontend, testing, and CI/CD. Live and in testing with students.',
-    fullDescription: 'Math-MATE is a full-stack educational platform built for the Learning Disabilities Association of Newfoundland and Labrador. As sole developer, I designed the data model, built Supabase backend services (auth, REST APIs, input validation), and implemented the entire React + Next.js frontend with TailwindCSS. The platform follows WCAG accessibility guidelines to serve young children with learning needs. Features include interactive math lessons, real-time progress tracking, dynamic content management, and CI/CD for continuous delivery. Now live and in testing with students. (Source code is private - client project for LDANL.)',
-    tags: ['Full-Stack', 'EdTech', 'Accessibility', 'React', 'Next.js'],
+    description: 'An accessible, interactive math-education platform for K1-K3 students with diverse learning needs, built for the Learning Disabilities Association of Newfoundland and Labrador. Sole developer.',
+    fullDescription: 'Math-MATE is an accessible, interactive math-education platform for K1-K3 students with diverse learning needs, built for the Learning Disabilities Association of Newfoundland and Labrador. As sole developer, I built the data model, the backend, the accessible frontend, the testing setup, and CI/CD. The interface is built with Next.js, TypeScript, and Tailwind CSS on a Supabase backend, with interactive math games built in Phaser. Now live and in testing with students at LDANL. (Source code is private - client project for LDANL.)',
+    tags: ['Full-Stack', 'EdTech', 'Accessibility', 'Next.js', 'TypeScript'],
     icon: <Calculator className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     github: '',
     demo: 'https://mathmate.ldanl.ca/',
     image: mathMateImage,
-    technologies: ['React', 'Next.js', 'TypeScript', 'TailwindCSS', 'Supabase', 'CI/CD'],
-    features: ['Accessible UI (WCAG)', 'Real-time Progress Tracking', 'Interactive Math Lessons', 'Authentication', 'Dynamic Content Management']
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Phaser'],
+    features: ['Accessible UI (WCAG 2.2)', 'Interactive Math Games', 'Real-time Progress Tracking', 'Authentication', 'Automated Testing', 'CI/CD']
   },
   {
     title: 'Budget Buddy',
-    description: 'Personal budgeting app with expense tracking, category visualizations, and real-time data sync. Built with React, Firebase, and Chart.js.',
-    fullDescription: 'Budget Buddy is a React + Firebase web application that helps users manage expenses and budgets. Features include expense tracking, category-wise visualizations with Chart.js, Firebase authentication, PDF report generation, and real-time data updates. The project followed software design principles (SOLID, UML modeling) and was thoroughly tested (unit, system, exploratory) for robustness and usability.',
-    tags: ['Full-Stack', 'React', 'Firebase', 'Chart.js'],
+    description: 'A personal finance tracker built by a 6-person Agile team, with an AI chat assistant, dashboard charts, budget goals, and multi-currency support.',
+    fullDescription: 'Budget Buddy is a personal finance tracker built by a 6-person Agile team. It features Firebase authentication, expense and category management, dashboard charts, PDF/CSV export, an AI chat assistant (Google Gemini) for natural-language expense entry and queries, budget goals with progress alerts, multi-currency support with live exchange rates, and global live search. The app is backed by 305 unit tests (100% coverage) and 102 Cypress end-to-end tests, and scores 99/100 on Lighthouse performance.',
+    tags: ['Full-Stack', 'React', 'Firebase', 'AI Assistant'],
     icon: <Wallet className="w-6 h-6" />,
     color: 'bg-gradient-primary',
     github: 'https://github.com/JasleenMinhas578/BudgetBuddy',
     demo: 'https://budget-buddy-mun.vercel.app/',
     image: budgetBuddyImage,
-    technologies: ['React', 'Firebase', 'Chart.js', 'Material-UI', 'Jest'],
-    features: ['Expense Tracking', 'Budget Management', 'Authentication', 'PDF Export', 'Real-time Visualization']
+    technologies: ['React', 'Firebase', 'Chart.js', 'Jest', 'Cypress', 'GitHub Actions', 'Vercel'],
+    features: ['AI Chat Assistant (Google Gemini)', 'Expense & Category Management', 'Dashboard Charts', 'Budget Goals with Progress Alerts', 'Multi-currency with Live Exchange Rates', 'Global Live Search', 'PDF/CSV Export', '305 unit tests (100% coverage) & 102 Cypress E2E tests', '99/100 Lighthouse performance score']
   },
   {
     title: 'Semantic Book Recommender with Generative AI',
