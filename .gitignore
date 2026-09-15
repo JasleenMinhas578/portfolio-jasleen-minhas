@@ -109,3 +109,6 @@ temp/
 
 # Vite
 .vite/
+
+# Local image backups (not part of the site)
+src/assets/*old*
